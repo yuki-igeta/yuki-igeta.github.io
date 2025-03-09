@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.title %}{{ page.title | escape }} - {{ site.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
+  <meta name="description" content="{{ site.description }}">
+
+  <!-- Normalize CSS -->
+  <link rel="stylesheet" href="{{ "/assets/css/normalize.css" | relative_url }}">
+
+  <!-- Skeleton CSS -->
+  <link rel="stylesheet" href="{{ "/assets/css/skeleton.css" | relative_url }}">
+
+  <!-- Google Fonts - Raleway -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:300,400,600">
+
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="{{ "/assets/css/custom.css" | relative_url }}">
+
+  {%- feed_meta -%}
+</head>
+<body>
+  <div class="container">
+    <!-- プロフィール -->
+    <section class="row" style="margin-top: 5%">
+      <div class="three columns">
+        {% if site.profile_image %}
+        <img src="{{ site.profile_image | relative_url }}" alt="プロフィール画像" class="u-max-full-width">
+        {% endif %}
+      </div>
+      <div class="nine columns">
+        <h2>{{ site.author_name }}</h2>
+        <p class="subtitle">{{ site.academic_title }}</p>
+        <p>ぞうの卵はおいしいぞう</p>
+      </div>
+    </section>
+
+    <!-- 研究プロジェクト -->
+    <section id="research" style="margin-top: 10%">
+      <h3>主要研究プロジェクト</h3>
+      <p>現在進行中および最近完了した主要な研究プロジェクトです。</p>
+
+      <div class="row">
+        <div class="six columns">
+          <h4>○○における△△メカニズムの解明</h4>
+          <p>計算科学的手法と実験的アプローチを組み合わせ、○○現象の背後にあるメカニズムの解明に取り組んでいます。本研究は□□財団の助成を受けています。</p>
+          <ul>
+            <li>キーワード: 計算科学、物性物理、データ解析</li>
+            <li>研究期間: 2022年4月〜2025年3月</li>
+          </ul>
+          <a href="#" class="button">詳細を見る</a>
+        </div>
+        <div class="six columns">
+          <h4>持続可能な□□技術の開発</h4>
+          <p>環境負荷を低減する新しい□□技術の開発に関する研究。理論と実践の両面からアプローチし、社会実装を視野に入れています。</p>
+          <ul>
+            <li>キーワード: 環境科学、材料工学、シミュレーション</li>
+            <li>研究期間: 2021年10月〜2024年9月</li>
+          </ul>
+          <a href="#" class="button">詳細を見る</a>
+        </div>
+      </div>
+
+      <div class="row" style="margin-top: 3rem;">
+        <div class="twelve columns">
+          <a href="{{ "/research" | relative_url }}" class="button">すべての研究プロジェクトを見る</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 発表論文 -->
+    <section style="margin-top: 10%">
+      <h3>発表論文・学会発表</h3>
+      <p>最近の研究論文および学会発表です。</p>
+
+      {% for post in site.posts limit:3 %}
+      <div class="row" style="margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1px solid #eee;">
+        <div class="two columns">
+          <p style="margin: 0;">{{ post.date | date: "%Y年%m月%d日" }}</p>
+        </div>
+        <div class="ten columns">
+          <h5><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h5>
+          <p>{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
+          {% if post.journal %}<p class="journal">{{ post.journal }}</p>{% endif %}
+          {% if post.doi %}<p>DOI: <a href="https://doi.org/{{ post.doi }}" target="_blank">{{ post.doi }}</a></p>{% endif %}
+          <a href="{{ post.url | relative_url }}">詳細 &raquo;</a>
+        </div>
+      </div>
+      {% endfor %}
+
+      <div class="row">
+        <div class="twelve columns">
+          <a href="{{ "/publications" | relative_url }}" class="button">すべての論文・発表を見る</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 連絡先 -->
+    <section style="margin-top: 10%">
+      <h3>連絡先</h3>
+      <div class="row">
+        <div class="twelve columns">
+          <p>研究に関するお問い合わせ、共同研究のご提案など、お気軽にご連絡ください。</p>
+          <ul>
+            <li><strong>所属:</strong> ○○大学 △△研究科 □□研究室</li>
+            <li><strong>住所:</strong> 〒000-0000 ○○県△△市□□町1-2-3</li>
+            <li><strong>Email:</strong> <a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+          </ul>
+          {% if site.github_username %}<a href="https://github.com/{{ site.github_username }}" style="margin-right: 20px;">GitHub</a>{% endif %}
+          {% if site.twitter_username %}<a href="https://twitter.com/{{ site.twitter_username }}" style="margin-right: 20px;">Twitter</a>{% endif %}
+          <a href="https://orcid.org/" target="_blank" style="margin-right: 20px;">ORCID</a>
+          <a href="https://scholar.google.com/" target="_blank" style="margin-right: 20px;">Google Scholar</a>
+          <a href="https://www.researchgate.net/" target="_blank">ResearchGate</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- フッター -->
+    <footer style="margin-top: 10%; margin-bottom: 5%; padding-top: 5%; border-top: 1px solid #eee;">
+      <p>&copy; {{ site.time | date: '%Y' }} {{ site.title }}. All rights reserved.</p>
+    </footer>
+  </div>
+</body>
+</html>

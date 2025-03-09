@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page.title | escape }} - {{ site.title | escape }}</title>
+  <meta name="description" content="{{ page.excerpt | strip_html | normalize_whitespace | truncate: 160 | escape }}">
+
+  <!-- Normalize CSS -->
+  <link rel="stylesheet" href="{{ "/assets/css/normalize.css" | relative_url }}">
+
+  <!-- Skeleton CSS -->
+  <link rel="stylesheet" href="{{ "/assets/css/skeleton.css" | relative_url }}">
+
+  <!-- Google Fonts - Raleway -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:300,400,600">
+
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="{{ "/assets/css/custom.css" | relative_url }}">
+
+  {%- feed_meta -%}
+
+  <style>
+    .post-content {
+      margin-bottom: 3rem;
+    }
+
+    .post-content img {
+      max-width: 100%;
+      height: auto;
+      margin: 2rem 0;
+      border-radius: 4px;
+    }
+
+    .post-meta {
+      color: #888;
+      margin-bottom: 2rem;
+    }
+
+    blockquote {
+      border-left: 4px solid #e1e1e1;
+      padding-left: 2rem;
+      margin-left: 0;
+      color: #777;
+      font-style: italic;
+    }
+
+    pre {
+      background: #f8f8f8;
+      border: 1px solid #e1e1e1;
+      border-radius: 4px;
+      padding: 1rem;
+      overflow: auto;
+    }
+
+    code {
+      background: #f8f8f8;
+      padding: 0.2rem 0.5rem;
+      border-radius: 3px;
+      font-size: 90%;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- ヘッダー -->
+    <div class="header">
+      <h1><a href="{{ "/" | relative_url }}" style="text-decoration: none; color: inherit;">{{ site.title }}</a></h1>
+      <p>{{ site.description }}</p>
+    </div>
+
+    <!-- 記事コンテンツ -->
+    <div style="background-color: #fff; padding: 3rem; border-radius: 6px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); margin-bottom: 3rem;">
+      <article class="post">
+        <header class="post-header">
+          <h2>{{ page.title | escape }}</h2>
+          <p class="post-meta">
+            <time datetime="{{ page.date | date_to_xmlschema }}">
+              {{ page.date | date: "%Y年%m月%d日" }}
+            </time>
+            {%- if page.author -%}
+              • <span itemprop="author">{{ page.author }}</span>
+            {%- endif -%}
+          </p>
+        </header>
+
+        <div class="post-content">
+          {{ content }}
+        </div>
+      </article>
+    </div>
+
+    <!-- 記事ナビゲーション -->
+    <div class="row" style="margin-bottom: 3rem;">
+      <div class="six columns">
+        {% if page.previous %}
+        <a href="{{ page.previous.url | relative_url }}" class="button">&laquo; {{ page.previous.title }}</a>
+        {% endif %}
+      </div>
+      <div class="six columns" style="text-align: right;">
+        {% if page.next %}
+        <a href="{{ page.next.url | relative_url }}" class="button">{{ page.next.title }} &raquo;</a>
+        {% endif %}
+      </div>
+    </div>
+
+    <!-- フッター -->
+    <div class="footer">
+      <p>&copy; {{ site.time | date: '%Y' }} {{ site.title }}. All rights reserved.</p>
+    </div>
+  </div>
+</body>
+</html>
