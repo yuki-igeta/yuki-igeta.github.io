@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.title %}{{ page.title | escape }} - {{ site.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
+  <meta name="description" content="{{ site.description }}">
+
+  <!-- Normalize CSS -->
+  <link rel="stylesheet" href="{{ "/assets/css/normalize.css" | relative_url }}">
+
+  <!-- Skeleton CSS -->
+  <link rel="stylesheet" href="{{ "/assets/css/skeleton.css" | relative_url }}">
+
+  <!-- Google Fonts - Raleway -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:300,400,600">
+
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="{{ "/assets/css/custom.css" | relative_url }}">
+
+  {%- feed_meta -%}
+</head>
+<body>
+  <div class="container">
+    <!-- ヘッダー -->
+    <header style="margin-top: 5%; margin-bottom: 5%;">
+      <h1>{{ page.title }}</h1>
+      <p>{{ site.data.research_map.family_name.ja }} {{ site.data.research_map.given_name.ja }}の研究・活動業績</p>
+      <p><a href="{{ "/" | relative_url }}">&laquo; ホームに戻る</a></p>
+    </header>
+
+    <!-- 目次 -->
+    <section class="table-of-contents">
+      <h3>目次</h3>
+      <ul>
+        <li><a href="#published_papers">発表論文</a></li>
+        <li><a href="#books">書籍・分担執筆</a></li>
+        <li><a href="#presentations">学会発表</a></li>
+        <li><a href="#research_projects">研究プロジェクト</a></li>
+        <li><a href="#patents">特許</a></li>
+        <li><a href="#awards">受賞歴</a></li>
+        <li><a href="#committee">委員会活動</a></li>
+        <li><a href="#misc">その他</a></li>
+      </ul>
+    </section>
+
+    <!-- 発表論文 -->
+    <section id="published_papers" style="margin-top: 5%;">
+      <h3>発表論文</h3>
+      {% assign papers = site.data.research_map['@graph'] | where: "@type", "published_papers" | first %}
+      {% if papers.items.size > 0 %}
+        <table class="u-full-width">
+          <thead>
+            <tr>
+              <th>発表年月</th>
+              <th>タイトル</th>
+              <th>掲載誌</th>
+              <th>詳細</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for paper in papers.items %}
+            <tr>
+              <td>{{ paper.publication_date | slice: 0, 4 }}年{% if paper.publication_date.size > 4 %}{{ paper.publication_date | slice: 5, 2 }}月{% endif %}</td>
+              <td>
+                {% if paper.paper_title.ja %}
+                {{ paper.paper_title.ja }}
+                {% elsif paper.paper_title.en %}
+                {{ paper.paper_title.en }}
+                {% endif %}
+                {% if paper.authors.ja %}
+                <p class="authors">
+                  {% for author in paper.authors.ja %}
+                  {{ author.name }}{% unless forloop.last %}, {% endunless %}
+                  {% endfor %}
+                </p>
+                {% elsif paper.authors.en %}
+                <p class="authors">
+                  {% for author in paper.authors.en %}
+                  {{ author.name }}{% unless forloop.last %}, {% endunless %}
+                  {% endfor %}
+                </p>
+                {% endif %}
+              </td>
+              <td>{% if paper.publication_name.ja %}{{ paper.publication_name.ja }}{% elsif paper.publication_name.en %}{{ paper.publication_name.en }}{% endif %} {% if paper.volume %}Vol.{{ paper.volume }}{% endif %}{% if paper.number %} No.{{ paper.number }}{% endif %}{% if paper.starting_page %}, pp.{{ paper.starting_page }}-{{ paper.ending_page }}{% endif %}</td>
+              <td>
+                {% if paper.identifiers.doi[0] %}<a href="https://doi.org/{{ paper.identifiers.doi[0] }}" target="_blank">DOI</a>{% endif %}
+                {% if paper.see_also[0] %}<a href="{{ paper.see_also[0]['@id'] }}" target="_blank">詳細</a>{% endif %}
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      {% else %}
+        <p>発表論文の情報はありません。</p>
+      {% endif %}
+    </section>
+
+    <!-- 書籍・分担執筆 -->
+    <section id="books" style="margin-top: 5%;">
+      <h3>書籍・分担執筆</h3>
+      {% assign books = site.data.research_map['@graph'] | where: "@type", "books_etc" | first %}
+      {% if books.items.size > 0 %}
+        <table class="u-full-width">
+          <thead>
+            <tr>
+              <th>発行年月</th>
+              <th>タイトル</th>
+              <th>出版社</th>
+              <th>詳細</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for book in books.items %}
+            <tr>
+              <td>{{ book.publication_date | slice: 0, 4 }}年{% if book.publication_date.size > 4 %}{{ book.publication_date | slice: 5, 2 }}月{% endif %}</td>
+              <td>
+                {% if book.book_title.ja %}
+                {{ book.book_title.ja }}
+                {% elsif book.book_title.en %}
+                {{ book.book_title.en }}
+                {% endif %}
+                {% if book.book_owner_role %}
+                <p>役割: {% if book.book_owner_role == "joint_work" %}共著{% elsif book.book_owner_role == "single_author" %}単著{% else %}{{ book.book_owner_role }}{% endif %}</p>
+                {% endif %}
+                {% if book.book_owner_range.ja %}
+                <p>担当範囲: {{ book.book_owner_range.ja }}</p>
+                {% elsif book.book_owner_range.en %}
+                <p>担当範囲: {{ book.book_owner_range.en }}</p>
+                {% endif %}
+              </td>
+              <td>{% if book.publisher.ja %}{{ book.publisher.ja }}{% elsif book.publisher.en %}{{ book.publisher.en }}{% endif %}</td>
+              <td>
+                {% if book.identifiers.isbn[0] %}<a href="https://iss.ndl.go.jp/books/{{ book.identifiers.isbn[0] }}" target="_blank">ISBN</a>{% endif %}
+                {% if book.see_also[0] %}<a href="{{ book.see_also[0]['@id'] }}" target="_blank">詳細</a>{% endif %}
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      {% else %}
+        <p>書籍・分担執筆の情報はありません。</p>
+      {% endif %}
+    </section>
+
+    <!-- 学会発表 -->
+    <section id="presentations" style="margin-top: 5%;">
+      <h3>学会発表</h3>
+      {% assign presentations = site.data.research_map['@graph'] | where: "@type", "presentations" | first %}
+      {% if presentations.items.size > 0 %}
+        <table class="u-full-width">
+          <thead>
+            <tr>
+              <th>発表年月日</th>
+              <th>タイトル</th>
+              <th>イベント</th>
+              <th>種別</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for presentation in presentations.items %}
+            <tr>
+              <td>
+                {% if presentation.publication_date %}
+                  {{ presentation.publication_date | slice: 0, 4 }}年
+                  {% if presentation.publication_date.size > 7 %}{{ presentation.publication_date | slice: 5, 2 }}月{{ presentation.publication_date | slice: 8, 2 }}日{% endif %}
+                {% elsif presentation.from_event_date %}
+                  {{ presentation.from_event_date | slice: 0, 4 }}年
+                  {% if presentation.from_event_date.size > 7 %}{{ presentation.from_event_date | slice: 5, 2 }}月{{ presentation.from_event_date | slice: 8, 2 }}日{% endif %}
+                {% endif %}
+              </td>
+              <td>
+                {% if presentation.presentation_title.ja %}
+                {{ presentation.presentation_title.ja }}
+                {% elsif presentation.presentation_title.en %}
+                {{ presentation.presentation_title.en }}
+                {% endif %}
+                {% if presentation.presenters.ja %}
+                <p class="authors">
+                  {% for presenter in presentation.presenters.ja %}
+                  {{ presenter.name }}{% unless forloop.last %}, {% endunless %}
+                  {% endfor %}
+                </p>
+                {% elsif presentation.presenters.en %}
+                <p class="authors">
+                  {% for presenter in presentation.presenters.en %}
+                  {{ presenter.name }}{% unless forloop.last %}, {% endunless %}
+                  {% endfor %}
+                </p>
+                {% endif %}
+              </td>
+              <td>{% if presentation.event.ja %}{{ presentation.event.ja }}{% elsif presentation.event.en %}{{ presentation.event.en }}{% endif %}</td>
+              <td>
+                {% if presentation.presentation_type == "oral_presentation" %}口頭発表
+                {% elsif presentation.presentation_type == "poster_presentation" %}ポスター発表
+                {% elsif presentation.presentation_type == "invited" or presentation.invited == true %}招待講演
+                {% elsif presentation.presentation_type == "keynote" %}基調講演
+                {% elsif presentation.presentation_type == "public_discourse" %}一般講演
+                {% elsif presentation.presentation_type == "nominated_symposium" %}シンポジウム
+                {% else %}{{ presentation.presentation_type }}
+                {% endif %}
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      {% else %}
+        <p>学会発表の情報はありません。</p>
+      {% endif %}
+    </section>
+
+    <!-- 研究プロジェクト -->
+    <section id="research_projects" style="margin-top: 5%;">
+      <h3>研究プロジェクト</h3>
+      {% assign research_projects = site.data.research_map['@graph'] | where: "@type", "research_projects" | first %}
+      {% if research_projects.items.size > 0 %}
+        <table class="u-full-width">
+          <thead>
+            <tr>
+              <th>期間</th>
+              <th>プロジェクト名</th>
+              <th>助成機関</th>
+              <th>役割</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for project in research_projects.items %}
+            <tr>
+              <td>{{ project.from_date | slice: 0, 4 }}年{{ project.from_date | slice: 5, 2 }}月〜{% if project.to_date == "9999" %}現在{% else %}{{ project.to_date | slice: 0, 4 }}年{{ project.to_date | slice: 5, 2 }}月{% endif %}</td>
+              <td>
+                {% if project.research_project_title.ja %}
+                {{ project.research_project_title.ja }}
+                {% elsif project.research_project_title.en %}
+                {{ project.research_project_title.en }}
+                {% endif %}
+              </td>
+              <td>
+                {% if project.offer_organization.ja %}
+                {{ project.offer_organization.ja }}
+                {% elsif project.offer_organization.en %}
+                {{ project.offer_organization.en }}
+                {% endif %}
+                {% if project.system_name.ja %}
+                {{ project.system_name.ja }}
+                {% elsif project.system_name.en %}
+                {{ project.system_name.en }}
+                {% endif %}
+              </td>
+              <td>
+                {% if project.research_project_owner_role == "principal_investigator" %}研究代表者
+                {% elsif project.research_project_owner_role == "coinvestigator" %}共同研究者
+                {% else %}{{ project.research_project_owner_role }}
+                {% endif %}
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      {% else %}
+        <p>研究プロジェクトの情報はありません。</p>
+      {% endif %}
+    </section>
+
+    <!-- 特許 -->
+    <section id="patents" style="margin-top: 5%;">
+      <h3>特許</h3>
+      {% assign patents = site.data.research_map['@graph'] | where: "@type", "industrial_property_rights" | first %}
+      {% if patents.items.size > 0 %}
+        <table class="u-full-width">
+          <thead>
+            <tr>
+              <th>出願日</th>
+              <th>名称</th>
+              <th>出願者</th>
+              <th>特許番号</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for patent in patents.items %}
+            <tr>
+              <td>{{ patent.application_date | slice: 0, 4 }}年{{ patent.application_date | slice: 5, 2 }}月{{ patent.application_date | slice: 8, 2 }}日</td>
+              <td>
+                {% if patent.industrial_property_right_title.ja %}
+                {{ patent.industrial_property_right_title.ja }}
+                {% elsif patent.industrial_property_right_title.en %}
+                {{ patent.industrial_property_right_title.en }}
+                {% endif %}
+                {% if patent.inventors.ja %}
+                <p class="authors">
+                  発明者: {% for inventor in patent.inventors.ja %}
+                  {{ inventor.name }}{% unless forloop.last %}, {% endunless %}
+                  {% endfor %}
+                </p>
+                {% elsif patent.inventors.en %}
+                <p class="authors">
+                  発明者: {% for inventor in patent.inventors.en %}
+                  {{ inventor.name }}{% unless forloop.last %}, {% endunless %}
+                  {% endfor %}
+                </p>
+                {% endif %}
+              </td>
+              <td>
+                {% for applicant in patent.applicants %}
+                {% if applicant.applicant.ja %}
+                {{ applicant.applicant.ja }}
+                {% elsif applicant.applicant.en %}
+                {{ applicant.applicant.en }}
+                {% endif %}
+                {% unless forloop.last %}, {% endunless %}
+                {% endfor %}
+              </td>
+              <td>
+                {% if patent.patent_number %}{{ patent.patent_number }}{% endif %}
+                {% if patent.identifiers.j_global_id[0] and patent.see_also[0] %}
+                <br><a href="{{ patent.see_also[0]['@id'] }}" target="_blank">J-GLOBAL</a>
+                {% endif %}
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      {% else %}
+        <p>特許の情報はありません。</p>
+      {% endif %}
+    </section>
+
+    <!-- 受賞歴 -->
+    <section id="awards" style="margin-top: 5%;">
+      <h3>受賞歴</h3>
+      {% assign awards = site.data.research_map['@graph'] | where: "@type", "awards" | first %}
+      {% if awards.items.size > 0 %}
+        <table class="u-full-width">
+          <thead>
+            <tr>
+              <th>受賞年月</th>
+              <th>賞名</th>
+              <th>対象作品・業績</th>
+              <th>授与機関</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for award in awards.items %}
+            <tr>
+              <td>{{ award.award_date | slice: 0, 4 }}年{{ award.award_date | slice: 5, 2 }}月</td>
+              <td>
+                {% if award.award_name.ja %}
+                {{ award.award_name.ja }}
+                {% elsif award.award_name.en %}
+                {{ award.award_name.en }}
+                {% endif %}
+              </td>
+              <td>
+                {% if award.award_title.ja %}
+                {{ award.award_title.ja }}
+                {% elsif award.award_title.en %}
+                {{ award.award_title.en }}
+                {% endif %}
+              </td>
+              <td>
+                {% if award.association.ja %}
+                {{ award.association.ja }}
+                {% elsif award.association.en %}
+                {{ award.association.en }}
+                {% endif %}
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      {% else %}
+        <p>受賞歴の情報はありません。</p>
+      {% endif %}
+    </section>
+
+    <!-- 委員会活動 -->
+    <section id="committee" style="margin-top: 5%;">
+      <h3>委員会活動</h3>
+      {% assign committees = site.data.research_map['@graph'] | where: "@type", "committee_memberships" | first %}
+      {% if committees.items.size > 0 %}
+        <table class="u-full-width">
+          <thead>
+            <tr>
+              <th>期間</th>
+              <th>委員会名</th>
+              <th>組織</th>
+              <th>種別</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for committee in committees.items %}
+            <tr>
+              <td>{{ committee.from_date | slice: 0, 4 }}年{{ committee.from_date | slice: 5, 2 }}月〜{% if committee.to_date == "9999" %}現在{% else %}{{ committee.to_date | slice: 0, 4 }}年{{ committee.to_date | slice: 5, 2 }}月{% endif %}</td>
+              <td>
+                {% if committee.committee_name.ja %}
+                {{ committee.committee_name.ja }}
+                {% elsif committee.committee_name.en %}
+                {{ committee.committee_name.en }}
+                {% endif %}
+              </td>
+              <td>
+                {% if committee.association.ja %}
+                {{ committee.association.ja }}
+                {% elsif committee.association.en %}
+                {{ committee.association.en }}
+                {% endif %}
+              </td>
+              <td>
+                {% if committee.committee_type == "academic_society" %}学会
+                {% elsif committee.committee_type == "government" %}政府関連
+                {% elsif committee.committee_type == "others" %}その他
+                {% else %}{{ committee.committee_type }}
+                {% endif %}
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      {% else %}
+        <p>委員会活動の情報はありません。</p>
+      {% endif %}
+    </section>
+
+    <!-- その他 -->
+    <section id="misc" style="margin-top: 5%;">
+      <h3>その他</h3>
+      {% assign misc = site.data.research_map['@graph'] | where: "@type", "misc" | first %}
+      {% if misc.items.size > 0 %}
+        <table class="u-full-width">
+          <thead>
+            <tr>
+              <th>発表年月</th>
+              <th>タイトル</th>
+              <th>掲載誌</th>
+              <th>種別</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for item in misc.items %}
+            <tr>
+              <td>{{ item.publication_date | slice: 0, 4 }}年{{ item.publication_date | slice: 5, 2 }}月</td>
+              <td>
+                {% if item.paper_title.ja %}
+                {{ item.paper_title.ja }}
+                {% elsif item.paper_title.en %}
+                {{ item.paper_title.en }}
+                {% endif %}
+                {% if item.authors.ja %}
+                <p class="authors">
+                  {% for author in item.authors.ja %}
+                  {{ author.name }}{% unless forloop.last %}, {% endunless %}
+                  {% endfor %}
+                </p>
+                {% elsif item.authors.en %}
+                <p class="authors">
+                  {% for author in item.authors.en %}
+                  {{ author.name }}{% unless forloop.last %}, {% endunless %}
+                  {% endfor %}
+                </p>
+                {% endif %}
+              </td>
+              <td>
+                {% if item.publication_name.ja %}
+                {{ item.publication_name.ja }}
+                {% elsif item.publication_name.en %}
+                {{ item.publication_name.en }}
+                {% endif %}
+                {% if item.volume %}Vol.{{ item.volume }}{% endif %}
+                {% if item.number %} No.{{ item.number }}{% endif %}
+                {% if item.starting_page %}, pp.{{ item.starting_page }}-{{ item.ending_page }}{% endif %}
+              </td>
+              <td>
+                {% if item.misc_type == "introduction_scientific_journal" %}紹介記事
+                {% elsif item.misc_type == "technical_report" %}技術報告
+                {% elsif item.misc_type == "commentary_article" %}解説記事
+                {% elsif item.misc_type == "newspaper_etc" %}新聞記事
+                {% else %}{{ item.misc_type }}
+                {% endif %}
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      {% else %}
+        <p>その他の業績情報はありません。</p>
+      {% endif %}
+    </section>
+
+    <!-- 社会貢献活動 -->
+    <section id="social_contribution" style="margin-top: 5%;">
+      <h3>社会貢献活動</h3>
+      {% assign social = site.data.research_map['@graph'] | where: "@type", "social_contribution" | first %}
+      {% if social.items.size > 0 %}
+        <table class="u-full-width">
+          <thead>
+            <tr>
+              <th>期間</th>
+              <th>活動名</th>
+              <th>主催者</th>
+              <th>種別</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for activity in social.items %}
+            <tr>
+              <td>
+                {% if activity.from_event_date and activity.to_event_date %}
+                  {% if activity.from_event_date == activity.to_event_date %}
+                    {{ activity.from_event_date | slice: 0, 4 }}年{{ activity.from_event_date | slice: 5, 2 }}月{{ activity.from_event_date | slice: 8, 2 }}日
+                  {% else %}
+                    {{ activity.from_event_date | slice: 0, 4 }}年{{ activity.from_event_date | slice: 5, 2 }}月{{ activity.from_event_date | slice: 8, 2 }}日〜
+                    {{ activity.to_event_date | slice: 0, 4 }}年{{ activity.to_event_date | slice: 5, 2 }}月{{ activity.to_event_date | slice: 8, 2 }}日
+                  {% endif %}
+                {% endif %}
+              </td>
+              <td>
+                {% if activity.social_contribution_title.ja %}
+                {{ activity.social_contribution_title.ja }}
+                {% elsif activity.social_contribution_title.en %}
+                {{ activity.social_contribution_title.en }}
+                {% endif %}
+              </td>
+              <td>
+                {% if activity.promoter.ja %}
+                {{ activity.promoter.ja }}
+                {% elsif activity.promoter.en %}
+                {{ activity.promoter.en }}
+                {% endif %}
+              </td>
+              <td>
+                {% if activity.social_contribution_type == "lecture" %}講演
+                {% elsif activity.social_contribution_type == "workshop" %}ワークショップ
+                {% elsif activity.social_contribution_type == "exhibition" %}展示
+                {% elsif activity.social_contribution_type == "media_coverage" %}メディア掲載
+                {% else %}{{ activity.social_contribution_type }}
+                {% endif %}
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      {% else %}
+        <p>社会貢献活動の情報はありません。</p>
+      {% endif %}
+    </section>
+
+    <!-- フッター -->
+    <footer style="margin-top: 10%; margin-bottom: 5%; padding-top: 5%; border-top: 1px solid #eee;">
+      <p><a href="{{ "/" | relative_url }}">&laquo; ホームに戻る</a></p>
+      <p>&copy; {{ site.time | date: '%Y' }} {{ site.title }}. All rights reserved.</p>
+    </footer>
+  </div>
+</body>
+</html>
+

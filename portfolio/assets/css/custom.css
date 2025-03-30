@@ -90,10 +90,763 @@ img {
   border-radius: 5px;
 }
 
+/* プロフィール情報のスタイル */
+.profile-info {
+  margin-top: 2rem;
+}
+
+.profile-section {
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+  padding: 1.5rem 0;
+}
+
+.profile-section h5 {
+  border-left: 3px solid #1EAEDB;
+  padding-left: 1rem;
+  margin-bottom: 1rem;
+}
+
+.profile-section ul {
+  margin-bottom: 0.5rem;
+  padding-left: 2rem;
+}
+
+.profile-section li {
+  margin-bottom: 0.3rem;
+}
+
+/* 業績一覧ページのスタイル */
+.table-of-contents {
+  background-color: #f9f9f9;
+  padding: 2rem;
+  border-radius: 5px;
+  margin-bottom: 3rem;
+}
+
+.table-of-contents ul {
+  margin-bottom: 0;
+  column-count: 2;
+}
+
+.table-of-contents li {
+  margin-bottom: 0.5rem;
+}
+
+table.u-full-width {
+  margin-bottom: 2.5rem;
+}
+
+table.u-full-width th {
+  background-color: #f4f4f4;
+}
+
+table.u-full-width tr:hover {
+  background-color: #f9f9f9;
+}
+
+.authors {
+  font-size: 0.9em;
+  color: #666;
+  margin: 0.5rem 0 0 0;
+}
+
+/* レスポンシブ調整 */
 @media (max-width: 550px) {
   h1 { font-size: 2.8rem; }
   h2 { font-size: 2.4rem; }
   h3 { font-size: 2.0rem; }
   h4 { font-size: 1.8rem; }
   h5 { font-size: 1.6rem; }
+
+  .profile-section h5 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 750px) {
+  .table-of-contents ul {
+    column-count: 1;
+  }
+
+  table.u-full-width thead {
+    display: none;
+  }
+
+  table.u-full-width tr {
+    display: block;
+    margin-bottom: 2rem;
+    border: 1px solid #e1e1e1;
+    padding: 1rem;
+    border-radius: 4px;
+  }
+
+  table.u-full-width td {
+    display: block;
+    text-align: right;
+    border-bottom: none;
+    padding: 0.5rem 0;
+  }
+
+  table.u-full-width td:before {
+    content: attr(data-label);
+    float: left;
+    font-weight: 600;
+  }
+}
+
+/* 全体のスタイル */
+body {
+  font-family: 'Raleway', sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* セクション共通スタイル */
+.section {
+  margin: 4rem 0;
+  padding: 1rem 0;
+}
+
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  font-weight: 500;
+  color: #333;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.subsection {
+  margin: 2.5rem 0;
+}
+
+.subsection-title {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+  color: #444;
+  position: relative;
+  padding-left: 1rem;
+  border-left: 4px solid #1EAEDB;
+}
+
+/* 研究概要以降のセクションタイトルのスタイル */
+.research-overview-section .section-title,
+.approach-section .section-title,
+.projects-section .section-title,
+.future-section .section-title {
+  border-bottom: 2px solid #eee;
+}
+
+.research-overview-section .section-title::after,
+.approach-section .section-title::after,
+.projects-section .section-title::after,
+.future-section .section-title::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 60px;
+  height: 2px;
+  background-color: #1EAEDB;
+}
+
+/* プロフィールセクション */
+.profile-section {
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+  padding: 1.5rem 0;
+}
+
+.profile-image {
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  max-width: 120px;
+}
+
+.profile-name {
+  margin-bottom: 0.5rem;
+  font-size: 2.2rem;
+  font-weight: 500;
+}
+
+.profile-affiliation {
+  margin-bottom: 1.5rem;
+  color: #666;
+  font-size: 1.4rem;
+}
+
+/* 最新の活動 */
+.recent-activities-wrapper {
+  margin-top: 1.5rem;
+}
+
+.recent-activities-wrapper h3.section-title {
+  font-size: 1.6rem;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+.activity-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.activity-item {
+  position: relative;
+  margin-bottom: 1.2rem;
+  padding-bottom: 1.2rem;
+  padding-left: 1.2rem;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.activity-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.activity-item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.5rem;
+  width: 4px;
+  height: 4px;
+  background-color: #1EAEDB;
+  border-radius: 50%;
+}
+
+.activity-metadata {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 0.3rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.activity-metadata::after {
+  content: "・";
+  color: #ccc;
+}
+
+.activity-content {
+  font-size: 1.3rem;
+  color: #333;
+  line-height: 1.5;
+}
+
+.view-all {
+  margin-top: 2rem;
+  text-align: right;
+}
+
+.view-all-link {
+  text-decoration: none;
+  color: #1EAEDB;
+  font-size: 1.3rem;
+  display: inline-flex;
+  align-items: center;
+  transition: color 0.2s ease;
+}
+
+.view-all-link:hover {
+  color: #0FA0CE;
+}
+
+.view-all-link::after {
+  content: "»";
+  margin-left: 0.5rem;
+  font-size: 1.4rem;
+}
+
+/* レスポンシブ調整 */
+@media (max-width: 550px) {
+  .activity-item {
+    padding-left: 1rem;
+  }
+
+  .activity-metadata {
+    font-size: 1.1rem;
+  }
+
+  .activity-content {
+    font-size: 1.2rem;
+  }
+}
+
+/* トピックカード */
+.topics-section {
+  background-color: #f9f9f9;
+  padding: 3rem 0;
+  border-radius: 4px;
+}
+
+.topic-card {
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.topic-image {
+  height: 200px;
+  overflow: hidden;
+}
+
+.topic-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.topic-content {
+  padding: 2rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.topic-title {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.topic-date {
+  color: #666;
+  font-size: 0.9em;
+  margin-bottom: 1rem;
+}
+
+.topic-description {
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+/* 研究概要 */
+.research-overview-section {
+  margin: 3rem 0;
+  padding: 2.5rem 0;
+  background-color: #fafafa;
+  border-radius: 4px;
+}
+
+.research-overview-section .section-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2.5rem;
+  border-bottom: none;
+}
+
+.research-overview-section .section-title::after {
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+}
+
+.research-description,
+.technique-description,
+.project-description,
+.future-description {
+  font-size: 1.5rem;
+  line-height: 1.7;
+  color: #444;
+  text-align: justify;
+  margin-bottom: 2rem;
+}
+
+/* 研究アプローチ */
+.technique-item {
+  margin-bottom: 2.5rem;
+}
+
+.technique-title {
+  font-size: 1.6rem;
+  color: #444;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+/* プロジェクト */
+.project-item {
+  margin-bottom: 2.5rem;
+  padding-bottom: 2rem;
+}
+
+.project-item:last-child {
+  border-bottom: none;
+}
+
+.project-title {
+  font-size: 1.6rem;
+  color: #444;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+/* 未来展望 */
+.future-description {
+  font-size: 1.1em;
+  line-height: 1.7;
+  text-align: justify;
+}
+
+/* 連絡先 */
+.contact-section {
+  background-color: #f9f9f9;
+  padding: 3rem 2rem;
+  border-radius: 4px;
+}
+
+.contact-intro {
+  margin-bottom: 2rem;
+}
+
+.contact-list {
+  list-style: none;
+  margin: 0 0 2rem 0;
+  padding: 0;
+}
+
+.contact-item {
+  margin-bottom: 1rem;
+}
+
+.social-links {
+  margin-top: 2rem;
+}
+
+.social-link {
+  display: inline-block;
+  margin-right: 1.5rem;
+  text-decoration: none;
+  color: #1EAEDB;
+}
+
+.social-link:hover {
+  text-decoration: underline;
+}
+
+/* フッター */
+.site-footer {
+  margin-top: 5rem;
+  margin-bottom: 3rem;
+  padding-top: 3rem;
+  border-top: 1px solid #eee;
+  text-align: center;
+}
+
+.copyright {
+  color: #777;
+  font-size: 0.9em;
+}
+
+/* レスポンシブ調整 */
+@media (max-width: 750px) {
+  .section-title::after {
+    width: 50px;
+  }
+
+  .research-overview-section .section-title::after {
+    width: 80px;
+  }
+
+  .subsection-title {
+    font-size: 1.6rem;
+  }
+
+  .profile-name {
+    font-size: 2rem;
+  }
+
+  .research-description,
+  .technique-description,
+  .project-description,
+  .future-description {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 550px) {
+  .section-title::after {
+    width: 40px;
+  }
+
+  .research-overview-section .section-title::after {
+    width: 60px;
+  }
+
+  .section-title {
+    font-size: 1.7rem;
+  }
+
+  .subsection-title {
+    font-size: 1.5rem;
+  }
+
+  .profile-name {
+    font-size: 1.8rem;
+  }
+
+  .research-description,
+  .technique-description,
+  .project-description,
+  .future-description {
+    font-size: 1.2rem;
+  }
+
+  .profile-section .columns {
+    margin-bottom: 2rem;
+  }
+
+  .topic-card {
+    margin-bottom: 2rem;
+  }
+
+  .profile-image {
+    max-width: 100px;
+  }
+
+  .research-overview-section .offset-by-two {
+    margin-left: 0;
+  }
+
+  .research-overview-section .eight.columns {
+    width: 100%;
+  }
+}
+
+/* Projects Section Styling */
+.projects-section .project-item {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #eee;
+}
+
+.projects-section .project-item:last-child {
+  border-bottom: none;
+}
+
+.projects-section .project-title {
+  margin-bottom: 0.5rem;
+  font-size: 1.8rem;
+}
+
+.projects-section .project-link {
+  color: #333;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.projects-section .project-link:hover {
+  color: #0066cc;
+}
+
+.projects-section .project-metadata {
+  font-size: 1.4rem;
+  color: #777;
+  margin-bottom: 1rem;
+}
+
+.projects-section .project-description {
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+}
+
+.projects-section .read-more {
+  color: #0066cc;
+  text-decoration: none;
+  font-weight: 500;
+  display: inline-block;
+  margin-left: 0.5rem;
+}
+
+.projects-section .read-more:hover {
+  text-decoration: underline;
+}
+
+/* テキスト均等揃え */
+p {
+  text-align: justify;
+}
+
+.research-description,
+.technique-description,
+.project-description,
+.future-description {
+  text-align: justify;
+}
+
+/* 投稿ページのスタイル */
+.post-header {
+  margin: 4rem 0 2rem;
+}
+
+.back-link {
+  margin-bottom: 2rem;
+}
+
+.back-link a {
+  color: #666;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.back-link a:hover {
+  color: #333;
+}
+
+.post-metadata {
+  color: #666;
+  margin: 1rem 0;
+  font-size: 1.4rem;
+}
+
+.post-category {
+  margin-left: 1rem;
+}
+
+.post-image {
+  margin: 2rem 0;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.post-content {
+  margin: 4rem 0;
+  line-height: 1.8;
+}
+
+.post-content h2 {
+  font-size: 2.4rem;
+  margin: 3rem 0 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #e1e1e1;
+}
+
+.post-content h3 {
+  font-size: 2rem;
+  margin: 2.5rem 0 1.25rem;
+}
+
+.post-content p {
+  margin-bottom: 1.5rem;
+  font-size: 1.6rem;
+}
+
+.post-content ul,
+.post-content ol {
+  margin: 1.5rem 0 2rem;
+  padding-left: 0;
+  list-style-position: outside;
+}
+
+.post-content ul {
+  list-style: none;
+}
+
+.post-content ul li {
+  position: relative;
+  padding-left: 2rem;
+  margin-bottom: 1rem;
+  line-height: 1.7;
+}
+
+.post-content ul li::before {
+  content: "";
+  position: absolute;
+  left: 0.6rem;
+  top: 0.7em;
+  width: 5px;
+  height: 5px;
+  background-color: #1EAEDB;
+  border-radius: 50%;
+}
+
+.post-content ol {
+  padding-left: 2.5rem;
+}
+
+.post-content ol li {
+  padding-left: 0.5rem;
+  margin-bottom: 1rem;
+  line-height: 1.7;
+}
+
+.post-content li {
+  font-size: 1.6rem;
+}
+
+/* ネストされたリストのスタイル */
+.post-content li > ul,
+.post-content li > ol {
+  margin: 0.8rem 0 0.8rem 0;
+}
+
+.post-content li > ul li,
+.post-content li > ol li {
+  margin-bottom: 0.8rem;
+}
+
+.post-content li > ul li:last-child,
+.post-content li > ol li:last-child {
+  margin-bottom: 0;
+}
+
+.post-content li > ul > li {
+  padding-left: 1.8rem;
+}
+
+.post-content li > ul > li::before {
+  left: 0.5rem;
+  top: 0.7em;
+  width: 4px;
+  height: 4px;
+  background-color: #88d1eb;
+}
+
+/* 番号付きリストのネスト */
+.post-content ol ol {
+  list-style-type: lower-alpha;
+  margin: 0.8rem 0 0.8rem 0;
+  padding-left: 2.2rem;
+}
+
+.post-content ol ol ol {
+  list-style-type: lower-roman;
+  padding-left: 2.2rem;
+}
+
+.site-footer {
+  margin: 6rem 0 3rem;
+  padding-top: 3rem;
+  border-top: 1px solid #e1e1e1;
+  text-align: center;
+}
+
+.copyright {
+  color: #666;
+  font-size: 1.4rem;
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 750px) {
+  .post-content h2 {
+    font-size: 2.2rem;
+  }
+
+  .post-content h3 {
+    font-size: 1.8rem;
+  }
+
+  .post-content p,
+  .post-content li {
+    font-size: 1.5rem;
+  }
 }

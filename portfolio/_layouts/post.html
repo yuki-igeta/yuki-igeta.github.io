@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ page.title | escape }} - {{ site.title | escape }}</title>
-  <meta name="description" content="{{ page.excerpt | strip_html | normalize_whitespace | truncate: 160 | escape }}">
+  <meta name="description" content="{{ page.description }}">
 
   <!-- Normalize CSS -->
   <link rel="stylesheet" href="{{ "/assets/css/normalize.css" | relative_url }}">
@@ -63,51 +63,47 @@
 </head>
 <body>
   <div class="container">
-    <!-- ヘッダー -->
-    <div class="header">
-      <h1><a href="{{ "/" | relative_url }}" style="text-decoration: none; color: inherit;">{{ site.title }}</a></h1>
-      <p>{{ site.description }}</p>
-    </div>
+    <header class="post-header">
+      <p class="back-link">
+        <a href="{{ "/" | relative_url }}">&laquo; ホームに戻る</a>
+      </p>
+    </header>
 
-    <!-- 記事コンテンツ -->
-    <div style="background-color: #fff; padding: 3rem; border-radius: 6px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); margin-bottom: 3rem;">
-      <article class="post">
-        <header class="post-header">
-          <h2>{{ page.title | escape }}</h2>
-          <p class="post-meta">
-            <time datetime="{{ page.date | date_to_xmlschema }}">
-              {{ page.date | date: "%Y年%m月%d日" }}
-            </time>
-            {%- if page.author -%}
-              • <span itemprop="author">{{ page.author }}</span>
-            {%- endif -%}
-          </p>
-        </header>
-
-        <div class="post-content">
-          {{ content }}
+    <article class="post">
+      <header class="research-overview-section">
+        <div class="row">
+          <div class="offset-by-two eight columns">
+            <h1 class="section-title">{{ page.title }}</h1>
+            <div class="post-metadata">
+              <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%Y年%m月%d日" }}</time>
+              {% if page.categories %}
+              <span class="post-category">{{ page.categories | join: ", " }}</span>
+              {% endif %}
+            </div>
+            <p class="research-description">{{ page.description }}</p>
+          </div>
         </div>
-      </article>
-    </div>
-
-    <!-- 記事ナビゲーション -->
-    <div class="row" style="margin-bottom: 3rem;">
-      <div class="six columns">
-        {% if page.previous %}
-        <a href="{{ page.previous.url | relative_url }}" class="button">&laquo; {{ page.previous.title }}</a>
+        {% if page.image %}
+        <div class="row">
+          <div class="offset-by-two eight columns">
+            <img src="{{ page.image | relative_url }}" alt="{{ page.title }}" class="u-max-full-width post-image">
+          </div>
+        </div>
         {% endif %}
-      </div>
-      <div class="six columns" style="text-align: right;">
-        {% if page.next %}
-        <a href="{{ page.next.url | relative_url }}" class="button">{{ page.next.title }} &raquo;</a>
-        {% endif %}
-      </div>
-    </div>
+      </header>
 
-    <!-- フッター -->
-    <div class="footer">
-      <p>&copy; {{ site.time | date: '%Y' }} {{ site.title }}. All rights reserved.</p>
-    </div>
+      <div class="post-content">
+        <div class="row">
+          <div class="offset-by-two eight columns">
+            {{ content }}
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <footer class="site-footer">
+      <p class="copyright">&copy; {{ site.time | date: '%Y' }} {{ site.title }}. All rights reserved.</p>
+    </footer>
   </div>
 </body>
 </html>

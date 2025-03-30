@@ -1,0 +1,1446 @@
+{
+    "@context": "https://api.researchmap.jp/researcher.jsonld",
+    "@id": "https://api.researchmap.jp/y_igeta?format=json",
+    "@type": "researchers",
+    "rm:user_id": "R000062808",
+    "rm:creator_id": "R000062808",
+    "rm:creator_type": "myself",
+    "rm:created": "2024-01-29T03:29:46Z",
+    "rm:modifier_id": "R000062808",
+    "rm:modifier_type": "myself",
+    "rm:modified": "2025-03-07T09:16:13Z",
+    "permalink": "y_igeta",
+    "family_name": {
+        "ja": "井桁",
+        "ja-Kana": "イゲタ",
+        "en": "Igeta"
+    },
+    "given_name": {
+        "ja": "由貴",
+        "ja-Kana": "ユキ",
+        "en": "Yuki"
+    },
+    "display_name_kana": "disclosed",
+    "display_nickname": "disclosed",
+    "image": "https://researchmap.jp/y_igeta/avatar.jpg",
+    "display_image": "disclosed",
+    "display_contact_point": "disclosed",
+    "affiliations": [
+        {
+            "affiliation": {
+                "ja": "東京大学 大学院新領域創成科学研究科",
+                "en": "The University of Tokyo"
+            },
+            "section": {
+                "en": "Graduate School of Frontier Sciences"
+            },
+            "job": {
+                "ja": "特任研究員"
+            },
+            "display_affiliation": "disclosed",
+            "display_job": "disclosed",
+            "rm:institution_code": "0172122000"
+        }
+    ],
+    "display_profile": "disclosed",
+    "display_url": "disclosed",
+    "identifiers": {
+        "j_global_id": [
+            "202401015463351930"
+        ]
+    },
+    "rm:erad_id_verified": false,
+    "rm:orc_id_verified": false,
+    "display_erad_id": "disclosed",
+    "display_orc_id": "closed",
+    "display_researcher_id": "disclosed",
+    "display_j_global_id": "disclosed",
+    "see_also": [
+        {
+            "label": "j_global",
+            "@id": "https://jglobal.jst.go.jp/detail?JGLOBAL_ID=202401015463351930"
+        }
+    ],
+    "@graph": [
+        {
+            "@id": "https://api.researchmap.jp/y_igeta/research_interests",
+            "@type": "research_interests",
+            "@reverse": "https://api.researchmap.jp/y_igeta",
+            "total_items": 3,
+            "items": [
+                {
+                    "@id": "https://api.researchmap.jp/y_igeta/research_interests/45917347",
+                    "@type": "research_interests",
+                    "@reverse": "https://api.researchmap.jp/y_igeta/research_interests",
+                    "rm:id": "45917347",
+                    "rm:user_id": "R000062808",
+                    "display": "disclosed",
+                    "major_achievement": false,
+                    "rm:creator_id": "R000062808",
+                    "rm:creator_type": "myself",
+                    "rm:created": "2024-03-26T14:55:32Z",
+                    "rm:modifier_id": "R000062808",
+                    "rm:modifier_type": "myself",
+                    "rm:modified": "2024-03-26T14:55:32Z",
+                    "keyword": {
+                        "ja": "スマートシティ",
+                        "en": "Smart City"
+                    }
+                },
+                {
+                    "@id": "https://api.researchmap.jp/y_igeta/research_interests/45917346",
+                    "@type": "research_interests",
+                    "@reverse": "https://api.researchmap.jp/y_igeta/research_interests",
+                    "rm:id": "45917346",
+                    "rm:user_id": "R000062808",
+                    "display": "disclosed",
+                    "major_achievement": false,
+                    "rm:creator_id": "R000062808",
+                    "rm:creator_type": "myself",
+                    "rm:created": "2024-03-26T14:55:23Z",
+                    "rm:modifier_id": "R000062808",
+                    "rm:modifier_type": "myself",
+                    "rm:modified": "2024-03-26T14:55:23Z",
+                    "keyword": {
+                        "ja": "都市デザイン",
+                        "en": "Urban Design"
+                    }
+                },
+                {
+                    "@id": "https://api.researchmap.jp/y_igeta/research_interests/45917343",
+                    "@type": "research_interests",
+                    "@reverse": "https://api.researchmap.jp/y_igeta/research_interests",
+                    "rm:id": "45917343",
+                    "rm:user_id": "R000062808",
+                    "display": "disclosed",
+                    "major_achievement": false,
+                    "rm:creator_id": "R000062808",
+                    "rm:creator_type": "myself",
+                    "rm:created": "2024-03-26T14:54:49Z",
+                    "rm:modifier_id": "R000062808",
+                    "rm:modifier_type": "myself",
+                    "rm:modified": "2024-03-26T14:54:49Z",
+                    "keyword": {
+                        "ja": "ウォーカブル",
+                        "en": "Walkable"
+                    }
+                }
+            ]
+        },
+        {
+            "@id": "https://api.researchmap.jp/y_igeta/research_areas",
+            "@type": "research_areas",
+            "@reverse": "https://api.researchmap.jp/y_igeta",
+            "total_items": 1,
+            "items": [
+                {
+                    "@id": "https://api.researchmap.jp/y_igeta/research_areas/45917350",
+                    "@type": "research_areas",
+                    "@reverse": "https://api.researchmap.jp/y_igeta/research_areas",
+                    "rm:id": "45917350",
+                    "rm:user_id": "R000062808",
+                    "display": "disclosed",
+                    "major_achievement": false,
+                    "rm:creator_id": "R000062808",
+                    "rm:creator_type": "myself",
+                    "rm:created": "2024-03-26T14:56:10Z",
+                    "rm:modifier_id": "R000062808",
+                    "rm:modifier_type": "myself",
+                    "rm:modified": "2024-03-26T14:56:10Z",
+                    "discipline_number": "A789",
+                    "item_number": "A23030",
+                    "discipline": {
+                        "ja": "社会基盤（土木・建築・防災）",
+                        "en": "Social infrastructure  (civil Engineering, architecture, disaster prevention)"
+                    },
+                    "research_field": {
+                        "ja": "建築計画、都市計画",
+                        "en": "Architectural and city planning"
+                    }
+                }
+            ]
+        },
+        {
+            "@id": "https://api.researchmap.jp/y_igeta/research_experience",
+            "@type": "research_experience",
+            "@reverse": "https://api.researchmap.jp/y_igeta",
+            "total_items": 2,
+            "items": [
+                {
+                    "@id": "https://api.researchmap.jp/y_igeta/research_experience/45917356",
+                    "@type": "research_experience",
+                    "@reverse": "https://api.researchmap.jp/y_igeta/research_experience",
+                    "rm:id": "45917356",
+                    "rm:user_id": "R000062808",
+                    "display": "disclosed",
+                    "major_achievement": false,
+                    "rm:creator_id": "R000062808",
+                    "rm:creator_type": "myself",
+                    "rm:created": "2024-03-26T14:57:33Z",
+                    "rm:modifier_id": "R000062808",
+                    "rm:modifier_type": "myself",
+                    "rm:modified": "2024-03-26T14:57:33Z",
+                    "from_date": "2021-09",
+                    "to_date": "9999",
+                    "rm:institution_code": "0172122000",
+                    "affiliation": {
+                        "ja": "東京大学",
+                        "en": "The University of Tokyo"
+                    },
+                    "section": {
+                        "ja": "大学院新領域創成科学研究科",
+                        "en": "Graduate School of Frontier Sciences"
+                    },
+                    "job": {
+                        "ja": "特任研究員",
+                        "en": "Project Researcher"
+                    },
+                    "address_country": "JPN"
+                },
+                {
+                    "@id": "https://api.researchmap.jp/y_igeta/research_experience/45917369",
+                    "@type": "research_experience",
+                    "@reverse": "https://api.researchmap.jp/y_igeta/research_experience",
+                    "rm:id": "45917369",
+                    "rm:user_id": "R000062808",
+                    "display": "disclosed",
+                    "major_achievement": false,
+                    "rm:creator_id": "R000062808",
+                    "rm:creator_type": "myself",
+                    "rm:created": "2024-03-26T15:00:50Z",
+                    "rm:modifier_id": "R000062808",
+                    "rm:modifier_type": "myself",
+                    "rm:modified": "2024-03-26T15:00:50Z",
+                    "from_date": "2018-04",
+                    "to_date": "2021-08",
+                    "rm:institution_code": "9999999999",
+                    "affiliation": {
+                        "ja": "株式会社ディー・エヌ・エー"
+                    }
+                }
+            ]
+        },
+        {
+            "@id": "https://api.researchmap.jp/y_igeta/education",
+            "@type": "education",
+            "@reverse": "https://api.researchmap.jp/y_igeta",
+            "total_items": 3,
+            "items": [
+                {
+                    "@id": "https://api.researchmap.jp/y_igeta/education/45917367",
+                    "@type": "education",
+                    "@reverse": "https://api.researchmap.jp/y_igeta/education",
+                    "rm:id": "45917367",
+                    "rm:user_id": "R000062808",
+                    "display": "disclosed",
+                    "major_achievement": false,
+                    "rm:creator_id": "R000062808",
+                    "rm:creator_type": "myself",
+                    "rm:created": "2024-03-26T15:00:10Z",
+                    "rm:modifier_id": "R000062808",
+                    "rm:modifier_type": "myself",
+                    "rm:modified": "2024-03-26T15:00:10Z",
+                    "from_date": "2021-04",
+                    "to_date": "2024-03",
+                    "rm:institution_code": "0172122013",
+                    "affiliation": {
+                        "ja": "東京大学",
+                        "en": "The University of Tokyo"
+                    },
+                    "department": {
+                        "ja": "大学院新領域創成科学研究科",
+                        "en": "Graduate School of Frontier Sciences"
+                    },
+                    "course": {
+                        "ja": "社会文化環境学専攻",
+                        "en": "Department of Socio-Cultural Environmental Studies"
+                    },
+                    "note": {
+                        "ja": "博士課程"
+                    },
+                    "address_country": "JPN"
+                },
+                {
+                    "@id": "https://api.researchmap.jp/y_igeta/education/45917364",
+                    "@type": "education",
+                    "@reverse": "https://api.researchmap.jp/y_igeta/education",
+                    "rm:id": "45917364",
+                    "rm:user_id": "R000062808",
+                    "display": "disclosed",
+                    "major_achievement": false,
+                    "rm:creator_id": "R000062808",
+                    "rm:creator_type": "myself",
+                    "rm:created": "2024-03-26T14:59:17Z",
+                    "rm:modifier_id": "R000062808",
+                    "rm:modifier_type": "myself",
+                    "rm:modified": "2024-03-26T14:59:39Z",
+                    "from_date": "2016-04",
+                    "to_date": "2018-03",
+                    "rm:institution_code": "0172122013",
+                    "affiliation": {
+                        "ja": "東京大学",
+                        "en": "The University of Tokyo"
+                    },
+                    "department": {
+                        "ja": "大学院新領域創成科学研究科",
+                        "en": "Graduate School of Frontier Sciences"
+                    },
+                    "course": {
+                        "ja": "社会文化環境学専攻",
+                        "en": "Department of Socio-Cultural Environmental Studies"
+                    },
+                    "note": {
+                        "ja": "修士課程"
+                    },
+                    "address_country": "JPN"
+                },
+                {
+                    "@id": "https://api.researchmap.jp/y_igeta/education/45917359",
+                    "@type": "education",
+                    "@reverse": "https://api.researchmap.jp/y_igeta/education",
+                    "rm:id": "45917359",
+                    "rm:user_id": "R000062808",
+                    "display": "disclosed",
+                    "major_achievement": false,
+                    "rm:creator_id": "R000062808",
+                    "rm:creator_type": "myself",
+                    "rm:created": "2024-03-26T14:58:40Z",
+                    "rm:modifier_id": "R000062808",
+                    "rm:modifier_type": "myself",
+                    "rm:modified": "2024-03-26T14:58:40Z",
+                    "from_date": "2012-04",
+                    "to_date": "2016-03",
+                    "rm:institution_code": "0368036020",
+                    "affiliation": {
+                        "ja": "九州大学",
+                        "en": "Kyushu University"
+                    },
+                    "department": {
+                        "ja": "工学部",
+                        "en": "School of Engineering"
+                    },
+                    "course": {
+                        "ja": "建築学科",
+                        "en": "Department of Archtecture"
+                    },
+                    "address_country": "JPN"
+                }
+            ]
+        },
+        {
+            "@id": "https://api.researchmap.jp/y_igeta/committee_memberships",
+            "@type": "committee_memberships",
+            "@reverse": "https://api.researchmap.jp/y_igeta",
+            "total_items": 3,
+            "items": [
+                {
+                    "@id": "https://api.researchmap.jp/y_igeta/committee_memberships/48508890",
+                    "@type": "committee_memberships",
+                    "@reverse": "https://api.researchmap.jp/y_igeta/committee_memberships",
+                    "rm:id": "48508890",
+                    "rm:user_id": "R000062808",
+                    "display": "disclosed",
+                    "major_achievement": false,
+                    "rm:creator_id": "R000062808",
+                    "rm:creator_type": "myself",
+                    "rm:created": "2024-11-21T14:57:20Z",
+                    "rm:modifier_id": "R000062808",
+                    "rm:modifier_type": "myself",
+                    "rm:modified": "2024-11-21T14:57:20Z",
+                    "from_date": "2024-04",
+                    "to_date": "9999",
+                    "committee_name": {
+                        "ja": "北但大震災復興100年記念プロジェクト実行委員会 交通・都市計画部会 事務局"
+                    },
+                    "committee_type": "others"
+                },
+                {
+                    "@id": "https://api.researchmap.jp/y_igeta/committee_memberships/45917377",
+                    "@type": "committee_memberships",
+                    "@reverse": "https://api.researchmap.jp/y_igeta/committee_memberships",
+                    "rm:id": "45917377",
+                    "rm:user_id": "R000062808",
+                    "display": "disclosed",
+                    "major_achievement": false,
+                    "rm:creator_id": "R000062808",
+                    "rm:creator_type": "myself",
+                    "rm:created": "2024-03-26T15:04:13Z",
+                    "rm:modifier_id": "R000062808",
+                    "rm:modifier_type": "myself",
+                    "rm:modified": "2024-03-26T15:04:13Z",
+                    "from_date": "2022-07",
+                    "to_date": "2023-03",
+                    "committee_name": {
+                        "ja": "柏セントラルウォーカブルビジョン検討委員",
+                        "en": "Kashiwa Central Walkable Vision Committee Menber"
+                    },
+                    "association": {
+                        "ja": "一般社団法人柏アーバンデザインセンター",
+                        "en": "Kashiwa Urban Design Center"
+                    }
+                },
+                {
+                    "@id": "https://api.researchmap.jp/y_igeta/committee_memberships/48508892",
+                    "@type": "committee_memberships",
+                    "@reverse": "https://api.researchmap.jp/y_igeta/committee_memberships",
+                    "rm:id": "48508892",
+                    "rm:user_id": "R000062808",
+                    "display": "disclosed",
+                    "major_achievement": false,
+                    "rm:creator_id": "R000062808",
+                    "rm:creator_type": "myself",
+                    "rm:created": "2024-11-21T14:58:57Z",
+                    "rm:modifier_id": "R000062808",
+                    "rm:modifier_type": "myself",
+                    "rm:modified": "2024-11-21T14:58:57Z",
+                    "from_date": "2021-09",
+                    "to_date": "2022-03",
+                    "committee_name": {
+                        "ja": "スマートシティ評価指標に関する有識者検討会 事務局"
+                    },
+                    "association": {
+                        "ja": "内閣府"
+                    }
+                }
+            ]
+        },
+        {
+            "@id": "https://api.researchmap.jp/y_igeta/awards",
+            "@type": "awards",
+            "@reverse": "https://api.researchmap.jp/y_igeta",
+            "total_items": 1,
+            "items": [
+                {
+                    "@id": "https://api.researchmap.jp/y_igeta/awards/45917431",
+                    "@type": "awards",
+                    "@reverse": "https://api.researchmap.jp/y_igeta/awards",
+                    "rm:id": "45917431",
+                    "rm:user_id": "R000062808",
+                    "display": "disclosed",
+                    "major_achievement": false,
+                    "rm:creator_id": "R000062808",
+                    "rm:creator_type": "myself",
+                    "rm:created": "2024-03-26T15:22:16Z",
+                    "rm:modifier_id": "R000062808",
+                    "rm:modifier_type": "myself",
+                    "rm:modified": "2024-03-26T15:22:16Z",
+                    "award_name": {
+                        "ja": "企画提案賞（卒業設計）"
+                    },
+                    "award_title": {
+                        "ja": "Chamber of Sphere Vehicle -剥離、移動、そして付着-"
+                    },
+                    "association": {
+                        "ja": "九州大学工学部建築学科同窓会 松遙会"
+                    },
+                    "award_date": "2016-03"
+                }
+            ]
+        },
+        {
+            "@id": "https://api.researchmap.jp/y_igeta/published_papers",
+            "@type": "published_papers",
+            "@reverse": "https://api.researchmap.jp/y_igeta",
+            "total_items": 6,
+            "items": [
+                {
+                    "@id": "https://api.researchmap.jp/y_igeta/published_papers/48508877",
+                    "@type": "published_papers",
+                    "@reverse": "https://api.researchmap.jp/y_igeta/published_papers",
+                    "rm:id": "48508877",
+                    "rm:user_id": "R000062808",
+                    "display": "disclosed",
+                    "major_achievement": false,
+                    "rm:creator_id": "R000062808",
+                    "rm:creator_type": "myself",
+                    "rm:created": "2024-11-21T14:51:00Z",
+                    "rm:modifier_id": "R000062808",
+                    "rm:modifier_type": "myself",
+                    "rm:modified": "2024-11-21T14:55:08Z",
+                    "paper_title": {
+                        "ja": "LiDARを用いた歩行行動調査による街路上休憩空間の歩行・滞留行動分析に関する研究—松山市花園町通りを対象として",
+                        "en": "Analysis on Walking and Staying Behaviors of Pedestrians on Street Rest Spaces by Survey of Pedestrian Activities with Use of LiDAR: A Case of Hanazonomachi Street in Matsuyama City"
+                    },
+                    "authors": {
+                        "ja": [
+                            {
+                                "name": "井桁 由貴"
+                            },
+                            {
+                                "name": "出口 敦"
+                            }
+                        ],
+                        "en": [
+                            {
+                                "name": "Igeta Yuki"
+                            },
+                            {
+                                "name": "Deguchi Atsushi"
+                            }
+                        ]
+                    },
+                    "published_paper_owner_roles": [
+                        "lead"
+                    ],
+                    "description": {
+                        "ja": "まちを魅力的なものにするためには、街路での滞留が快適で利用しやすいことが求められる。そのためには、滞留者のみならず非滞留者の行動も把握することが重要である。本研究では、LiDARセンサーを用いた歩行行動調査により、各パタンの詳細と、季節や可動ファニチャーによって変化する場所の環境特性との関係を明らかにすることを目的とした。その結果、非滞留者はさらに細かい3つの行動、「通過者」「停止者」「移動者」に分類され、各分類の歩行者数の割合や場所は、季節や可動ファニチャーにより変化することが示された。最後に、花園町通りにおける課題とその解決策、LiDARにより取得されたデータを用いて街路上休憩空間の設え等のマネジメントを行う新たな手法を提案した。",
+                        "en": "Staying space on urban streets should be comfortable and accessible to make cities attractive. For that, it is essential to understand behaviors of not only staying people but also non-staying people. This paper used pedestrian data from LiDAR sensors with two objectives: to classify pedestrians into some patterns based on their behavior as either staying or not staying, and to reveal the relationships between the details of each pattern and the environmental features of places that vary with seasons and movable furniture. As a result, non-staying behavior was divided into three significant patterns: ”passing by”, “stopping a little” and “moving around”, and the rates and places of pedestrian numbers of each pattern varied with seasons and movable furnishing. Finally, some issues and the way to solve them were proposed for Hanazonomachi street. Also, a new method was proposed to apply the analysis results by LiDAR to management."
+                    },
+                    "publisher": {
+                        "ja": "公益社団法人 日本都市計画学会",
+                        "en": "The City Planning Institute of Japan"
+                    },
+                    "publication_date": "2024",
+                    "publication_name": {
+                        "ja": "都市計画論文集",
+                        "en": "Journal of the City Planning Institute of Japan"
+                    },
+                    "volume": "59",
+                    "number": "3",
+                    "starting_page": "1660",
+                    "ending_page": "1667",
+                    "languages": [
+                        "jpn"
+                    ],
+                    "referee": true,
+                    "invited": false,
+                    "published_paper_type": "scientific_journal",
+                    "rm:is_open_access": true,
+                    "identifiers": {
+                        "doi": [
+                            "10.11361/journalcpij.59.1660"
+                        ],
+                        "issn": [
+                            "0916-0647"
+                        ],
+                        "e_issn": [
+                            "2185-0593"
+                        ],
+                        "cinii_cr_id": [
+                            "1390864899861426560"
+                        ]
+                    },
+                    "see_also": [
+                        {
+                            "label": "doi",
+                            "@id": "https://doi.org/10.11361/journalcpij.59.1660",
+                            "is_downloadable": true
+                        },
+                        {
+                            "label": "cinii_research",
+                            "@id": "https://cir.nii.ac.jp/crid/1390864899861426560?lang=ja",
+                            "is_downloadable": false
+                        }
+                    ]
+                },
+                {
+                    "@id": "https://api.researchmap.jp/y_igeta/published_papers/44539443",
+                    "@type": "published_papers",
+                    "@reverse": "https://api.researchmap.jp/y_igeta/published_papers",
+                    "rm:id": "44539443",
+                    "rm:user_id": "R000062808",
+                    "display": "disclosed",
+                    "major_achievement": false,
+                    "rm:creator_id": "R000062808",
+                    "rm:creator_type": "myself",
+                    "rm:created": "2024-01-29T03:33:49Z",
+                    "rm:modifier_id": "R000062808",
+                    "rm:modifier_type": "myself",
+                    "rm:modified": "2024-02-07T15:58:32Z",
+                    "paper_title": {
+                        "ja": "ロンドンのウォーカブル戦略と実行プロセスに関する研究",
+                        "en": "Implementation Process of Walkable Strategy and Action Plan in Greater London"
+                    },
+                    "authors": {
+                        "ja": [
+                            {
+                                "name": "井桁 由貴"
+                            },
+                            {
+                                "name": "出口 敦"
+                            }
+                        ],
+                        "en": [
+                            {
+                                "name": "Yuki Igeta"
+                            },
+                            {
+                                "name": "Atsushi Deguchi"
+                            }
+                        ]
+                    },
+                    "published_paper_owner_roles": [
+                        "lead"
+                    ],
+                    "publisher": {
+                        "en": "The City Planning Institute of Japan"
+                    },
+                    "publication_date": "2023-10-25",
+                    "publication_name": {
+                        "ja": "都市計画論文集",
+                        "en": "Journal of the City Planning Institute of Japan"
+                    },
+                    "volume": "58",
+                    "number": "3",
+                    "starting_page": "1063",
+                    "ending_page": "1070",
+                    "languages": [
+                        "jpn"
+                    ],
+                    "referee": true,
+                    "published_paper_type": "scientific_journal",
+                    "rm:is_open_access": true,
+                    "identifiers": {
+                        "doi": [
+                            "10.11361/journalcpij.58.1063"
+                        ],
+                        "issn": [
+                            "0916-0647"
+                        ],
+                        "e_issn": [
+                            "2185-0593"
+                        ]
+                    },
+                    "see_also": [
+                        {
+                            "label": "doi",
+                            "@id": "https://doi.org/10.11361/journalcpij.58.1063",
+                            "is_downloadable": true
+                        },
+                        {
+                            "@id": "https://www.jstage.jst.go.jp/article/journalcpij/58/3/58_1063/_pdf",
+                            "label": "url",
+                            "is_downloadable": false
+                        }
+                    ]
+                },
+                {
+                    "@id": "https://api.researchmap.jp/y_igeta/published_papers/44539463",
+                    "@type": "published_papers",
+                    "@reverse": "https://api.researchmap.jp/y_igeta/published_papers",
+                    "rm:id": "44539463",
+                    "rm:user_id": "R000062808",
+                    "display": "disclosed",
+                    "major_achievement": false,
+                    "rm:creator_id": "R000062808",
+                    "rm:creator_type": "myself",
+                    "rm:created": "2024-01-29T03:38:15Z",
+                    "rm:modifier_id": "R000062808",
+                    "rm:modifier_type": "myself",
+                    "rm:modified": "2024-01-29T03:38:15Z",
+                    "paper_title": {
+                        "en": "Methodology for Functionalization of “Living Lab” Under Concept of Smart Cities"
+                    },
+                    "authors": {
+                        "en": [
+                            {
+                                "name": "Yuki Igeta"
+                            },
+                            {
+                                "name": "Tomoyo Sasao"
+                            },
+                            {
+                                "name": "Haruka Kitamura"
+                            },
+                            {
+                                "name": "Mitsuharu Tai"
+                            },
+                            {
+                                "name": "Takuya Kurita"
+                            },
+                            {
+                                "name": "Atsushi Deguchi"
+                            }
+                        ]
+                    },
+                    "published_paper_owner_roles": [
+                        "lead"
+                    ],
+                    "publisher": {
+                        "en": "Springer Nature Switzerland"
+                    },
+                    "publication_date": "2023-07-09",
+                    "publication_name": {
+                        "en": "Distributed, Ambient and Pervasive Interactions"
+                    },
+                    "starting_page": "3",
+                    "ending_page": "17",
+                    "languages": [
+                        "eng"
+                    ],
+                    "referee": true,
+                    "published_paper_type": "in_book",
+                    "rm:is_open_access": false,
+                    "identifiers": {
+                        "doi": [
+                            "10.1007/978-3-031-34609-5_1"
+                        ],
+                        "issn": [
+                            "0302-9743"
+                        ],
+                        "e_issn": [
+                            "1611-3349"
+                        ],
+                        "isbn": [
+                            "9783031346088",
+                            "9783031346095"
+                        ]
+                    },
+                    "see_also": [
+                        {
+                            "label": "doi",
+                            "@id": "https://doi.org/10.1007/978-3-031-34609-5_1",
+                            "is_downloadable": false
+                        },
+                        {
+                            "@id": "https://link.springer.com/content/pdf/10.1007/978-3-031-34609-5_1",
+                            "label": "url",
+                            "is_downloadable": false
+                        }
+                    ]
+                },
+                {
+                    "@id": "https://api.researchmap.jp/y_igeta/published_papers/44539439",
+                    "@type": "published_papers",
+                    "@reverse": "https://api.researchmap.jp/y_igeta/published_papers",
+                    "rm:id": "44539439",
+                    "rm:user_id": "R000062808",
+                    "display": "disclosed",
+                    "major_achievement": false,
+                    "rm:creator_id": "R000062808",
+                    "rm:creator_type": "myself",
+                    "rm:created": "2024-01-29T03:33:05Z",
+                    "rm:modifier_id": "R000062808",
+                    "rm:modifier_type": "myself",
+                    "rm:modified": "2024-01-29T03:34:02Z",
+                    "paper_title": {
+                        "ja": "歩車分離道路の歩行者天国時における車道空間の歩行利用に関する研究 JR柏駅前ハウディモールにおける実態調査を通じて",
+                        "en": "Analysis on Road Space Usage of Pedestrians in a Temporarily-Pedestrianised Street"
+                    },
+                    "authors": {
+                        "ja": [
+                            {
+                                "name": "井桁 由貴"
+                            },
+                            {
+                                "name": "野上 昌孝"
+                            },
+                            {
+                                "name": "出口 敦"
+                            }
+                        ],
+                        "en": [
+                            {
+                                "name": "Yuki Igeta"
+                            },
+                            {
+                                "name": "Masataka Nogami"
+                            },
+                            {
+                                "name": "Atsushi Deguchi"
+                            }
+                        ]
+                    },
+                    "published_paper_owner_roles": [
+                        "lead"
+                    ],
+                    "publisher": {
+                        "en": "The City Planning Institute of Japan"
+                    },
+                    "publication_date": "2022-10-25",
+                    "publication_name": {
+                        "ja": "都市計画論文集",
+                        "en": "Journal of the City Planning Institute of Japan"
+                    },
+                    "volume": "57",
+                    "number": "3",
+                    "starting_page": "1273",
+                    "ending_page": "1280",
+                    "languages": [
+                        "jpn"
+                    ],
+                    "referee": true,
+                    "published_paper_type": "scientific_journal",
+                    "rm:is_open_access": false,
+                    "identifiers": {
+                        "doi": [
+                            "10.11361/journalcpij.57.1273"
+                        ],
+                        "issn": [
+                            "0916-0647"
+                        ],
+                        "e_issn": [
+                            "2185-0593"
+                        ]
+                    },
+                    "see_also": [
+                        {
+                            "label": "doi",
+                            "@id": "https://doi.org/10.11361/journalcpij.57.1273",
+                            "is_downloadable": false
+                        },
+                        {
+                            "@id": "https://www.jstage.jst.go.jp/article/journalcpij/57/3/57_1273/_pdf",
+                            "label": "url",
+                            "is_downloadable": false
+                        }
+                    ]
+                },
+                {
+                    "@id": "https://api.researchmap.jp/y_igeta/published_papers/48508902",
+                    "@type": "published_papers",
+                    "@reverse": "https://api.researchmap.jp/y_igeta/published_papers",
+                    "rm:id": "48508902",
+                    "rm:user_id": "R000062808",
+                    "display": "disclosed",
+                    "major_achievement": false,
+                    "rm:creator_id": "R000062808",
+                    "rm:creator_type": "myself",
+                    "rm:created": "2024-11-21T15:05:51Z",
+                    "rm:modifier_id": "R000062808",
+                    "rm:modifier_type": "myself",
+                    "rm:modified": "2024-11-21T15:06:49Z",
+                    "paper_title": {
+                        "ja": "リビングラボを通じた“まちの声を集めてみえるようにする仕組み\"のデザイン要件構築—Design Requirement Building for a Mechanism to Collect and Make Visible the Voices of the Community through the Living Lab—第191回ヒューマンインタフェース学会研究会 社会のデザイン・市民のデザイン"
+                    },
+                    "authors": {
+                        "ja": [
+                            {
+                                "name": "笹尾 知世"
+                            },
+                            {
+                                "name": "井桁 由貴"
+                            },
+                            {
+                                "name": "北村 春佳"
+                            },
+                            {
+                                "name": "出口 敦"
+                            }
+                        ]
+                    },
+                    "publisher": {
+                        "ja": "[京都] : ヒューマンインタフェース学会"
+                    },
+                    "publication_date": "2022",
+                    "publication_name": {
+                        "ja": "ヒューマンインタフェース学会研究報告集"
+                    },
+                    "volume": "24",
+                    "starting_page": "9",
+                    "ending_page": "14",
+                    "languages": [
+                        "jpn"
+                    ],
+                    "referee": true,
+                    "published_paper_type": "symposium",
+                    "rm:is_open_access": false,
+                    "identifiers": {
+                        "issn": [
+                            "2185-9329"
+                        ],
+                        "cinii_nc_id": [
+                            "AA12512253"
+                        ],
+                        "cinii_cr_id": [
+                            "1520864501715487360"
+                        ]
+                    },
+                    "see_also": [
+                        {
+                            "label": "cinii_books",
+                            "@id": "http://ci.nii.ac.jp/ncid/AA12512253",
+                            "is_downloadable": false
+                        },
+                        {
+                            "label": "cinii_research",
+                            "@id": "https://cir.nii.ac.jp/crid/1520864501715487360?lang=ja",
+                            "is_downloadable": false
+                        },
+                        {
+                            "@id": "http://id.ndl.go.jp/bib/033693851",
+                            "label": "url",
+                            "is_downloadable": false
+                        },
+                        {
+                            "@id": "https://ndlsearch.ndl.go.jp/books/R000000004-I033693851",
+                            "label": "url",
+                            "is_downloadable": false
+                        }
+                    ]
+                },
+                {
+                    "@id": "https://api.researchmap.jp/y_igeta/published_papers/48508910",
+                    "@type": "published_papers",
+                    "@reverse": "https://api.researchmap.jp/y_igeta/published_papers",
+                    "rm:id": "48508910",
+                    "rm:user_id": "R000062808",
+                    "display": "disclosed",
+                    "major_achievement": false,
+                    "rm:creator_id": "R000062808",
+                    "rm:creator_type": "myself",
+                    "rm:created": "2024-11-21T15:07:30Z",
+                    "rm:modifier_id": "R000062808",
+                    "rm:modifier_type": "myself",
+                    "rm:modified": "2024-11-21T15:08:14Z",
+                    "paper_title": {
+                        "ja": "轍からみたポンペイ都市内の荷車交通に関する一考察"
+                    },
+                    "authors": {
+                        "ja": [
+                            {
+                                "name": "井桁 由貴"
+                            },
+                            {
+                                "name": "堀 賀貴"
+                            }
+                        ]
+                    },
+                    "published_paper_owner_roles": [
+                        "lead"
+                    ],
+                    "publisher": {
+                        "ja": "日本建築学会"
+                    },
+                    "publication_date": "2016-03",
+                    "publication_name": {
+                        "ja": "日本建築学会九州支部研究報告集"
+                    },
+                    "number": "55",
+                    "starting_page": "661",
+                    "ending_page": "664",
+                    "languages": [
+                        "jpn"
+                    ],
+                    "referee": false,
+                    "published_paper_type": "in_book",
+                    "rm:is_open_access": false,
+                    "identifiers": {
+                        "cinii_na_id": [
+                            "200000463503"
+                        ],
+                        "cinii_nc_id": [
+                            "AN00149726"
+                        ],
+                        "cinii_cr_id": [
+                            "1573950402839625856"
+                        ]
+                    },
+                    "see_also": [
+                        {
+                            "label": "cinii_books",
+                            "@id": "http://ci.nii.ac.jp/ncid/AN00149726",
+                            "is_downloadable": false
+                        },
+                        {
+                            "label": "cinii_research",
+                            "@id": "https://cir.nii.ac.jp/crid/1573950402839625856?lang=ja",
+                            "is_downloadable": false
+                        },
+                        {
+                            "@id": "https://www.aij.or.jp/paper/detail.html?productId=654192",
+                            "label": "url",
+                            "is_downloadable": false
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "@id": "https://api.researchmap.jp/y_igeta/misc",
+            "@type": "misc",
+            "@reverse": "https://api.researchmap.jp/y_igeta",
+            "total_items": 1,
+            "items": [
+                {
+                    "@id": "https://api.researchmap.jp/y_igeta/misc/48992033",
+                    "@type": "misc",
+                    "@reverse": "https://api.researchmap.jp/y_igeta/misc",
+                    "rm:id": "48992033",
+                    "rm:user_id": "R000062808",
+                    "display": "disclosed",
+                    "major_achievement": false,
+                    "rm:creator_id": "R000062808",
+                    "rm:creator_type": "myself",
+                    "rm:created": "2025-01-23T06:43:08Z",
+                    "rm:modifier_id": "R000062808",
+                    "rm:modifier_type": "myself",
+                    "rm:modified": "2025-01-23T06:43:08Z",
+                    "paper_title": {
+                        "ja": "官民連携による公共空間の利活用を通じたウォーカブルなまちづくり Healthy Streets Approachから見たロンドンのウォーカブルなまちづくり"
+                    },
+                    "authors": {
+                        "ja": [
+                            {
+                                "name": "井桁由貴"
+                            }
+                        ]
+                    },
+                    "published_paper_owner_roles": [
+                        "lead"
+                    ],
+                    "publication_date": "2024-12",
+                    "publication_name": {
+                        "ja": "都市計画372"
+                    },
+                    "volume": "74",
+                    "number": "1",
+                    "starting_page": "106",
+                    "ending_page": "108",
+                    "languages": [
+                        "jpn"
+                    ],
+                    "referee": false,
+                    "misc_type": "introduction_scientific_journal",
+                    "rm:is_open_access": false
+                }
+            ]
+        },
+        {
+            "@id": "https://api.researchmap.jp/y_igeta/books_etc",
+            "@type": "books_etc",
+            "@reverse": "https://api.researchmap.jp/y_igeta",
+            "total_items": 2,
+            "items": [
+                {
+                    "@id": "https://api.researchmap.jp/y_igeta/books_etc/44539468",
+                    "@type": "books_etc",
+                    "@reverse": "https://api.researchmap.jp/y_igeta/books_etc",
+                    "rm:id": "44539468",
+                    "rm:user_id": "R000062808",
+                    "display": "disclosed",
+                    "major_achievement": false,
+                    "rm:creator_id": "R000062808",
+                    "rm:creator_type": "myself",
+                    "rm:created": "2024-01-29T03:39:42Z",
+                    "rm:modifier_id": "R000062808",
+                    "rm:modifier_type": "myself",
+                    "rm:modified": "2024-01-29T03:39:42Z",
+                    "book_title": {
+                        "ja": "Society 5.0のアーキテクチャ : 人中心で持続可能なスマートシティのキーファクター"
+                    },
+                    "book_owner_role": "joint_work",
+                    "authors": {
+                        "ja": [
+                            {
+                                "name": "日立東大ラボ"
+                            }
+                        ]
+                    },
+                    "publisher": {
+                        "ja": "日経BP日本経済新聞出版,日経BPマーケティング(発売)"
+                    },
+                    "publication_date": "2023-12",
+                    "total_page": "307p",
+                    "languages": [
+                        "jpn"
+                    ],
+                    "identifiers": {
+                        "isbn": [
+                            "9784296115631"
+                        ],
+                        "cinii_nc_id": [
+                            "BD05135636"
+                        ]
+                    },
+                    "see_also": [
+                        {
+                            "label": "cinii_books",
+                            "@id": "http://ci.nii.ac.jp/ncid/BD05135636",
+                            "is_downloadable": false
+                        }
+                    ]
+                },
+                {
+                    "@id": "https://api.researchmap.jp/y_igeta/books_etc/48508900",
+                    "@type": "books_etc",
+                    "@reverse": "https://api.researchmap.jp/y_igeta/books_etc",
+                    "rm:id": "48508900",
+                    "rm:user_id": "R000062808",
+                    "display": "disclosed",
+                    "major_achievement": false,
+                    "rm:creator_id": "R000062808",
+                    "rm:creator_type": "myself",
+                    "rm:created": "2024-11-21T15:05:07Z",
+                    "rm:modifier_id": "R000062808",
+                    "rm:modifier_type": "myself",
+                    "rm:modified": "2024-11-21T15:05:07Z",
+                    "book_title": {
+                        "ja": "月刊「近代建築」2016年6月号別冊 全国大学建築系学科卒業設計優秀作品集 卒業制作 2016"
+                    },
+                    "book_owner_role": "others",
+                    "book_owner_range": {
+                        "ja": "p. 278-279"
+                    },
+                    "publisher": {
+                        "ja": "近代建築社"
+                    },
+                    "publication_date": "2016-06"
+                }
+            ]
+        },
+        {
+            "@id": "https://api.researchmap.jp/y_igeta/presentations",
+            "@type": "presentations",
+            "@reverse": "https://api.researchmap.jp/y_igeta",
+            "total_items": 3,
+            "items": [
+                {
+                    "@id": "https://api.researchmap.jp/y_igeta/presentations/49363826",
+                    "@type": "presentations",
+                    "@reverse": "https://api.researchmap.jp/y_igeta/presentations",
+                    "rm:id": "49363826",
+                    "rm:user_id": "R000062808",
+                    "display": "disclosed",
+                    "major_achievement": false,
+                    "rm:creator_id": "R000062808",
+                    "rm:creator_type": "myself",
+                    "rm:created": "2025-03-07T09:16:13Z",
+                    "rm:modifier_id": "R000062808",
+                    "rm:modifier_type": "myself",
+                    "rm:modified": "2025-03-07T09:16:13Z",
+                    "presentation_title": {
+                        "ja": "インプットトーク「LiDARを用いた人流調査・研究について」"
+                    },
+                    "presenters": {
+                        "ja": [
+                            {
+                                "name": "岡部 真久"
+                            },
+                            {
+                                "name": "多賀 洋輝"
+                            },
+                            {
+                                "name": "井桁 由貴"
+                            }
+                        ]
+                    },
+                    "event": {
+                        "ja": "Living Lens：生き物視点でつくる空間デザインワークショップ"
+                    },
+                    "publication_date": "2025-02-05",
+                    "from_event_date": "2025-02-05",
+                    "to_event_date": "2025-02-05",
+                    "invited": true,
+                    "languages": [
+                        "jpn"
+                    ],
+                    "presentation_type": "nominated_symposium",
+                    "rm:is_open_access": false
+                },
+                {
+                    "@id": "https://api.researchmap.jp/y_igeta/presentations/48992085",
+                    "@type": "presentations",
+                    "@reverse": "https://api.researchmap.jp/y_igeta/presentations",
+                    "rm:id": "48992085",
+                    "rm:user_id": "R000062808",
+                    "display": "disclosed",
+                    "major_achievement": false,
+                    "rm:creator_id": "R000062808",
+                    "rm:creator_type": "myself",
+                    "rm:created": "2025-01-23T06:51:01Z",
+                    "rm:modifier_id": "R000062808",
+                    "rm:modifier_type": "myself",
+                    "rm:modified": "2025-01-23T06:52:17Z",
+                    "presentation_title": {
+                        "en": "Reconceptualizing Walkability from Pedestrian Movement Measurements and Indicators"
+                    },
+                    "presenters": {
+                        "en": [
+                            {
+                                "name": "Yuki Igeta"
+                            }
+                        ]
+                    },
+                    "event": {
+                        "en": "Proceedings of The 17th Asian Planning School Association (APSA) Congress"
+                    },
+                    "publication_date": "2024-11-05",
+                    "from_event_date": "2024-11-05",
+                    "to_event_date": "2024-11-07",
+                    "invited": false,
+                    "languages": [
+                        "eng"
+                    ],
+                    "presentation_type": "oral_presentation",
+                    "rm:is_open_access": false
+                },
+                {
+                    "@id": "https://api.researchmap.jp/y_igeta/presentations/45917399",
+                    "@type": "presentations",
+                    "@reverse": "https://api.researchmap.jp/y_igeta/presentations",
+                    "rm:id": "45917399",
+                    "rm:user_id": "R000062808",
+                    "display": "disclosed",
+                    "major_achievement": false,
+                    "rm:creator_id": "R000062808",
+                    "rm:creator_type": "myself",
+                    "rm:created": "2024-03-26T15:09:38Z",
+                    "rm:modifier_id": "R000062808",
+                    "rm:modifier_type": "myself",
+                    "rm:modified": "2024-03-26T15:09:38Z",
+                    "presentation_title": {
+                        "ja": "【まちづくりトーク05】柏セントラルにおけるウォーカブルの実践に向けて"
+                    },
+                    "presenters": {
+                        "ja": [
+                            {
+                                "name": "大藪 善久"
+                            },
+                            {
+                                "name": "前田 英寿"
+                            },
+                            {
+                                "name": "井桁 由貴"
+                            },
+                            {
+                                "name": "梅岡 恒治"
+                            }
+                        ]
+                    },
+                    "from_event_date": "2024-02-20",
+                    "to_event_date": "2024-02-20",
+                    "invited": true,
+                    "languages": [
+                        "jpn"
+                    ],
+                    "presentation_type": "public_discourse",
+                    "rm:is_open_access": false
+                }
+            ]
+        },
+        {
+            "@id": "https://api.researchmap.jp/y_igeta/association_memberships",
+            "@type": "association_memberships",
+            "@reverse": "https://api.researchmap.jp/y_igeta",
+            "total_items": 2,
+            "items": [
+                {
+                    "@id": "https://api.researchmap.jp/y_igeta/association_memberships/45917415",
+                    "@type": "association_memberships",
+                    "@reverse": "https://api.researchmap.jp/y_igeta/association_memberships",
+                    "rm:id": "45917415",
+                    "rm:user_id": "R000062808",
+                    "display": "disclosed",
+                    "major_achievement": false,
+                    "rm:creator_id": "R000062808",
+                    "rm:creator_type": "myself",
+                    "rm:created": "2024-03-26T15:15:47Z",
+                    "rm:modifier_id": "R000062808",
+                    "rm:modifier_type": "myself",
+                    "rm:modified": "2024-03-26T15:15:53Z",
+                    "academic_society_name": {
+                        "ja": "日本建築学会"
+                    },
+                    "from_date": "2021-09",
+                    "to_date": "9999"
+                },
+                {
+                    "@id": "https://api.researchmap.jp/y_igeta/association_memberships/45917407",
+                    "@type": "association_memberships",
+                    "@reverse": "https://api.researchmap.jp/y_igeta/association_memberships",
+                    "rm:id": "45917407",
+                    "rm:user_id": "R000062808",
+                    "display": "disclosed",
+                    "major_achievement": false,
+                    "rm:creator_id": "R000062808",
+                    "rm:creator_type": "myself",
+                    "rm:created": "2024-03-26T15:11:37Z",
+                    "rm:modifier_id": "R000062808",
+                    "rm:modifier_type": "myself",
+                    "rm:modified": "2024-03-26T15:11:37Z",
+                    "academic_society_name": {
+                        "ja": "日本都市計画学会"
+                    },
+                    "from_date": "2021-09",
+                    "to_date": "9999"
+                }
+            ]
+        },
+        {
+            "@id": "https://api.researchmap.jp/y_igeta/research_projects",
+            "@type": "research_projects",
+            "@reverse": "https://api.researchmap.jp/y_igeta",
+            "total_items": 2,
+            "items": [
+                {
+                    "@id": "https://api.researchmap.jp/y_igeta/research_projects/48508885",
+                    "@type": "research_projects",
+                    "@reverse": "https://api.researchmap.jp/y_igeta/research_projects",
+                    "rm:id": "48508885",
+                    "rm:user_id": "R000062808",
+                    "display": "disclosed",
+                    "major_achievement": false,
+                    "rm:creator_id": "R000062808",
+                    "rm:creator_type": "myself",
+                    "rm:created": "2024-11-21T14:54:03Z",
+                    "rm:modifier_id": "R000062808",
+                    "rm:modifier_type": "myself",
+                    "rm:modified": "2024-11-21T14:54:03Z",
+                    "research_project_title": {
+                        "ja": "保養効果を高めるウォーカブルな 温泉地モデルの提案 -城崎温泉を 対象に"
+                    },
+                    "offer_organization": {
+                        "ja": "公益財団法人大林財団"
+                    },
+                    "system_name": {
+                        "ja": "研究助成"
+                    },
+                    "from_date": "2024-04",
+                    "to_date": "2024-05",
+                    "research_project_owner_role": "coinvestigator"
+                },
+                {
+                    "@id": "https://api.researchmap.jp/y_igeta/research_projects/45917428",
+                    "@type": "research_projects",
+                    "@reverse": "https://api.researchmap.jp/y_igeta/research_projects",
+                    "rm:id": "45917428",
+                    "rm:user_id": "R000062808",
+                    "display": "disclosed",
+                    "major_achievement": false,
+                    "rm:creator_id": "R000062808",
+                    "rm:creator_type": "myself",
+                    "rm:created": "2024-03-26T15:20:10Z",
+                    "rm:modifier_id": "R000062808",
+                    "rm:modifier_type": "myself",
+                    "rm:modified": "2024-03-26T15:20:10Z",
+                    "research_project_title": {
+                        "ja": "ウォーカブル政策と実行計画に関する日・英の比較研究"
+                    },
+                    "offer_organization": {
+                        "ja": "公益財団法人大林財団"
+                    },
+                    "system_name": {
+                        "ja": "奨励研究助成"
+                    },
+                    "from_date": "2022-04",
+                    "to_date": "2023-03",
+                    "research_project_owner_role": "principal_investigator"
+                }
+            ]
+        },
+        {
+            "@id": "https://api.researchmap.jp/y_igeta/industrial_property_rights",
+            "@type": "industrial_property_rights",
+            "@reverse": "https://api.researchmap.jp/y_igeta",
+            "total_items": 1,
+            "items": [
+                {
+                    "@id": "https://api.researchmap.jp/y_igeta/industrial_property_rights/48508870",
+                    "@type": "industrial_property_rights",
+                    "@reverse": "https://api.researchmap.jp/y_igeta/industrial_property_rights",
+                    "rm:id": "48508870",
+                    "rm:user_id": "R000062808",
+                    "display": "disclosed",
+                    "major_achievement": false,
+                    "rm:creator_id": "R000062808",
+                    "rm:creator_type": "myself",
+                    "rm:created": "2024-11-21T14:47:24Z",
+                    "rm:modifier_id": "R000062808",
+                    "rm:modifier_type": "myself",
+                    "rm:modified": "2024-11-21T14:47:24Z",
+                    "industrial_property_right_type": "patent_right",
+                    "industrial_property_right_title": {
+                        "ja": "配車管理装置、配車管理方法、配車管理システム及びプログラム"
+                    },
+                    "inventors": {
+                        "ja": [
+                            {
+                                "name": "町川 高明"
+                            },
+                            {
+                                "name": "井桁 由貴"
+                            },
+                            {
+                                "name": "立川 浩幹"
+                            },
+                            {
+                                "name": "富張 金剛"
+                            },
+                            {
+                                "name": "藤田 和正"
+                            },
+                            {
+                                "name": "平林 知己"
+                            },
+                            {
+                                "name": "山崎 勝"
+                            }
+                        ]
+                    },
+                    "application_number": "特願2019-165078",
+                    "application_date": "2019-09-11",
+                    "applicants": [
+                        {
+                            "applicant": {
+                                "ja": "日産自動車株式会社"
+                            },
+                            "rm:institution_code": "9999999999"
+                        },
+                        {
+                            "applicant": {
+                                "ja": "ルノー エス.ア.エス."
+                            },
+                            "rm:institution_code": "9999999999"
+                        }
+                    ],
+                    "patent_announcement_number": "特開2021-043686",
+                    "patent_announcement_date": "2021-03-18",
+                    "patent_number": "特許第7451117号",
+                    "registration_date": "2024-03-08",
+                    "identifiers": {
+                        "j_global_id": [
+                            "202403014099236101"
+                        ]
+                    },
+                    "see_also": [
+                        {
+                            "label": "j_global",
+                            "@id": "https://jglobal.jst.go.jp/detail?JGLOBAL_ID=202403014099236101"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "@id": "https://api.researchmap.jp/y_igeta/social_contribution",
+            "@type": "social_contribution",
+            "@reverse": "https://api.researchmap.jp/y_igeta",
+            "total_items": 1,
+            "items": [
+                {
+                    "@id": "https://api.researchmap.jp/y_igeta/social_contribution/46613973",
+                    "@type": "social_contribution",
+                    "@reverse": "https://api.researchmap.jp/y_igeta/social_contribution",
+                    "rm:id": "46613973",
+                    "rm:user_id": "R000062808",
+                    "display": "disclosed",
+                    "major_achievement": false,
+                    "rm:creator_id": "R000062808",
+                    "rm:creator_type": "myself",
+                    "rm:created": "2024-05-27T05:27:38Z",
+                    "rm:modifier_id": "R000062808",
+                    "rm:modifier_type": "myself",
+                    "rm:modified": "2024-05-27T05:27:38Z",
+                    "social_contribution_title": {
+                        "ja": "ロンドンにおける徒歩・自転車交通の推進と展望",
+                        "en": "Improving Prospects of Walking and Cycling in London"
+                    },
+                    "social_contribution_roles": [
+                        "appearance",
+                        "presenter",
+                        "planner",
+                        "organizing_member"
+                    ],
+                    "promoter": {
+                        "ja": "東京大学 大学院新領域創成科学研究科 社会文化環境学専攻 空間計画研究室",
+                        "en": "Graduate School of Frontier Sciences, The University of Tokyo"
+                    },
+                    "from_event_date": "2024-05-08",
+                    "to_event_date": "2024-05-08",
+                    "social_contribution_type": "lecture"
+                }
+            ]
+        }
+    ]
+}

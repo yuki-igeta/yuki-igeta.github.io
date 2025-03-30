@@ -22,103 +22,279 @@
 </head>
 <body>
   <div class="container">
-    <!-- プロフィール -->
-    <section class="row" style="margin-top: 5%">
-      <div class="three columns">
-        {% if site.profile_image %}
-        <img src="{{ site.profile_image | relative_url }}" alt="プロフィール画像" class="u-max-full-width">
-        {% endif %}
-      </div>
-      <div class="nine columns">
-        <h2>{{ site.author_name }}</h2>
-        <p class="subtitle">{{ site.academic_title }}</p>
-        <p>ぞうの卵はおいしいぞう</p>
-      </div>
-    </section>
-
-    <!-- 研究プロジェクト -->
-    <section id="research" style="margin-top: 10%">
-      <h3>主要研究プロジェクト</h3>
-      <p>現在進行中および最近完了した主要な研究プロジェクトです。</p>
-
+    <header class="section profile-section">
       <div class="row">
-        <div class="six columns">
-          <h4>○○における△△メカニズムの解明</h4>
-          <p>計算科学的手法と実験的アプローチを組み合わせ、○○現象の背後にあるメカニズムの解明に取り組んでいます。本研究は□□財団の助成を受けています。</p>
-          <ul>
-            <li>キーワード: 計算科学、物性物理、データ解析</li>
-            <li>研究期間: 2022年4月〜2025年3月</li>
-          </ul>
-          <a href="#" class="button">詳細を見る</a>
-        </div>
-        <div class="six columns">
-          <h4>持続可能な□□技術の開発</h4>
-          <p>環境負荷を低減する新しい□□技術の開発に関する研究。理論と実践の両面からアプローチし、社会実装を視野に入れています。</p>
-          <ul>
-            <li>キーワード: 環境科学、材料工学、シミュレーション</li>
-            <li>研究期間: 2021年10月〜2024年9月</li>
-          </ul>
-          <a href="#" class="button">詳細を見る</a>
-        </div>
-      </div>
-
-      <div class="row" style="margin-top: 3rem;">
-        <div class="twelve columns">
-          <a href="{{ "/research" | relative_url }}" class="button">すべての研究プロジェクトを見る</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- 発表論文 -->
-    <section style="margin-top: 10%">
-      <h3>発表論文・学会発表</h3>
-      <p>最近の研究論文および学会発表です。</p>
-
-      {% for post in site.posts limit:3 %}
-      <div class="row" style="margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1px solid #eee;">
         <div class="two columns">
-          <p style="margin: 0;">{{ post.date | date: "%Y年%m月%d日" }}</p>
+          <img src="{{ site.profile_image | relative_url }}" alt="プロフィール画像" class="profile-image u-max-full-width">
         </div>
         <div class="ten columns">
-          <h5><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h5>
-          <p>{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
-          {% if post.journal %}<p class="journal">{{ post.journal }}</p>{% endif %}
-          {% if post.doi %}<p>DOI: <a href="https://doi.org/{{ post.doi }}" target="_blank">{{ post.doi }}</a></p>{% endif %}
-          <a href="{{ post.url | relative_url }}">詳細 &raquo;</a>
+          <h1 class="profile-name">
+            {% if site.data.research_map.family_name.ja %}
+            {{ site.data.research_map.family_name.ja }} {{ site.data.research_map.given_name.ja }}
+            {% elsif site.data.research_map.family_name.en %}
+            {{ site.data.research_map.family_name.en }} {{ site.data.research_map.given_name.en }}
+            {% endif %}
+          </h1>
+          {% assign current_affiliation = site.data.research_map.affiliations[0] %}
+          <p class="profile-affiliation">
+            {% if current_affiliation.affiliation.ja %}
+            {{ current_affiliation.affiliation.ja }}
+            {% elsif current_affiliation.affiliation.en %}
+            {{ current_affiliation.affiliation.en }}
+            {% endif %}
+            {% if current_affiliation.job.ja %}
+            {{ current_affiliation.job.ja }}
+            {% elsif current_affiliation.job.en %}
+            {{ current_affiliation.job.en }}
+            {% endif %}
+          </p>
+
+          <div class="recent-activities-wrapper">
+            <h3 class="section-title">最新の活動</h3>
+
+            {% assign all_activities = "" | split: "" %}
+
+            {% assign papers = site.data.research_map['@graph'] | where: "@type", "published_papers" | first %}
+            {% for paper in papers.items limit:2 %}
+              {% assign activity = paper %}
+              {% assign activity_type = "paper" %}
+              {% assign activity_date = paper.publication_date %}
+              {% assign temp = activity_date | append: "," | append: activity_type | append: "," | append: forloop.index %}
+              {% assign all_activities = all_activities | push: temp %}
+            {% endfor %}
+
+            {% assign presentations = site.data.research_map['@graph'] | where: "@type", "presentations" | first %}
+            {% for presentation in presentations.items limit:2 %}
+              {% assign activity = presentation %}
+              {% assign activity_type = "presentation" %}
+              {% assign activity_date = presentation.publication_date | default: presentation.from_event_date %}
+              {% assign temp = activity_date | append: "," | append: activity_type | append: "," | append: forloop.index %}
+              {% assign all_activities = all_activities | push: temp %}
+            {% endfor %}
+
+            {% assign projects = site.data.research_map['@graph'] | where: "@type", "research_projects" | first %}
+            {% for project in projects.items limit:2 %}
+              {% assign activity = project %}
+              {% assign activity_type = "project" %}
+              {% assign activity_date = project.from_date %}
+              {% assign temp = activity_date | append: "," | append: activity_type | append: "," | append: forloop.index %}
+              {% assign all_activities = all_activities | push: temp %}
+            {% endfor %}
+
+            {% assign sorted_activities = all_activities | sort | reverse %}
+
+            <ul class="activity-list">
+              {% for activity_info in sorted_activities limit:3 %}
+                {% assign activity_parts = activity_info | split: "," %}
+                {% assign activity_date = activity_parts[0] %}
+                {% assign activity_type = activity_parts[1] %}
+                {% assign activity_index = activity_parts[2] | minus: 1 %}
+
+                <li class="activity-item">
+                  <div class="activity-metadata">
+                    {{ activity_date | slice: 0, 4 }}年{% if activity_date.size > 4 %}{{ activity_date | slice: 5, 2 }}月{% endif %}
+                    ・
+                    {% case activity_type %}
+                      {% when "paper" %}論文
+                      {% when "presentation" %}発表
+                      {% when "project" %}プロジェクト
+                    {% endcase %}
+                  </div>
+                  <div class="activity-content">
+                    {% case activity_type %}
+                      {% when "paper" %}
+                        {% assign item = papers.items[activity_index] %}
+                        {% if item.paper_title.ja %}
+                        {{ item.paper_title.ja }}
+                        {% elsif item.paper_title.en %}
+                        {{ item.paper_title.en }}
+                        {% endif %}
+                      {% when "presentation" %}
+                        {% assign item = presentations.items[activity_index] %}
+                        {% if item.presentation_title.ja %}
+                        {{ item.presentation_title.ja }}
+                        {% elsif item.presentation_title.en %}
+                        {{ item.presentation_title.en }}
+                        {% endif %}
+                      {% when "project" %}
+                        {% assign item = projects.items[activity_index] %}
+                        {% if item.research_project_title.ja %}
+                        {{ item.research_project_title.ja }}
+                        {% elsif item.research_project_title.en %}
+                        {{ item.research_project_title.en }}
+                        {% endif %}
+                    {% endcase %}
+                  </div>
+                </li>
+              {% endfor %}
+            </ul>
+            <div class="view-all">
+              <a href="{{ "/achievements" | relative_url }}" class="view-all-link">すべての業績を見る &raquo;</a>
+            </div>
+          </div>
         </div>
       </div>
+    </header>
+
+    <section class="section research-overview-section">
+      <header>
+        <h2 class="section-title">都市空間と歩行者行動の解析・改善に向けた実証的アプローチ</h2>
+      </header>
+      <div class="row">
+        <div class="offset-by-two eight columns">
+          <p class="research-description">
+            現代の都市環境は、歩行者の安全性や快適性、そして地域の活性化という観点から、公共空間の質の向上が求められています。私の研究は、先進的なセンサ技術やデータ解析手法を用い、都市空間における歩行者の行動パターンや利用実態を定量的に明らかにすることを目的としています。これにより、歩行者天国の実施、休憩空間の設計、さらには地域の歩行環境改善のための実践的な示唆を提供することを目指しています。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section approach-section">
+      <header>
+        <h2 class="section-title">研究のアプローチと技術</h2>
+      </header>
+
+      <div class="subsection">
+        <h3 class="subsection-title">先進センサ技術の活用</h3>
+
+        <div class="row technique-item">
+          <div class="eight columns">
+            <h4 class="technique-title">LiDAR技術</h4>
+            <p class="technique-description">
+              高精度なレーザーセンサ（LiDAR）を用いることで、1秒以下の計測間隔、30cm未満の誤差で歩行者の位置、速度、進行方向をリアルタイムに計測。
+            </p>
+          </div>
+          <div class="four columns">
+            <img src="{{ "/assets/images/lidar-example.JPG" | relative_url }}" alt="LiDAR技術" class="u-max-full-width">
+          </div>
+        </div>
+
+        <div class="row technique-item">
+          <div class="eight columns">
+            <h4 class="technique-title">ビデオ解析とポイント型流動人口データ</h4>
+            <p class="technique-description">
+              ビデオカメラを用いて断面歩行者交通量を集計し、スマートフォンGPSデータを用いて移動経路の推定を行うなど、複数のデータソースから空間と時間軸の両面で歩行者の動態を解析。
+            </p>
+          </div>
+          <div class="four columns">
+            <img src="{{ "/assets/images/video-analysis.jpg" | relative_url }}" alt="ビデオ撮影とポイント型流動人口データ" class="u-max-full-width">
+          </div>
+        </div>
+      </div>
+
+      <div class="subsection">
+        <h3 class="subsection-title">調査手法の多様性と統合</h3>
+        <div class="row">
+          <div class="twelve columns">
+            <p class="technique-description">
+              LiDAR、ビデオ、ポイント型流動人口データ、現地アンケート調査など、定量データと利用者の主観的な意見の双方を組み合わせることで、より現実に即した都市空間の評価を実施しています。これにより、歩行者の動態を多角的に理解し、公共空間の改善策を具体的に提案するための基盤を構築しました。
+            </p>
+          </div>
+          <!-- <div class="four columns">
+          </div> -->
+        </div>
+      </div>
+    </section>
+
+    <section class="section projects-section">
+      <header>
+        <h2 class="section-title">各調査の概要と成果</h2>
+      </header>
+
+      {% assign project_posts = site.posts | where: "categories", "research" | sort: "date" | reverse %}
+
+      {% for post in project_posts limit:4 %}
+      <section>
+        <h3 class="project-title">
+          <a href="{{ post.url | relative_url }}" class="project-link">{{ post.title }}</a>
+        </h3>
+        <div class="project-item row">
+          <div class="eight columns">
+            <div class="project-metadata">{{ post.date | date: "%Y年%m月%d日" }}</div>
+            <p class="project-description">
+              {{ post.description }}
+            </p>
+            <a href="{{ post.url | relative_url }}" class="read-more">詳しく見る &raquo;</a>
+          </div>
+          <div class="four columns">
+            <img src="{{ post.image | relative_url }}" alt="{{ post.title }}" class="u-max-full-width">
+          </div>
+        </div>
+      </section>
       {% endfor %}
 
-      <div class="row">
-        <div class="twelve columns">
-          <a href="{{ "/publications" | relative_url }}" class="button">すべての論文・発表を見る</a>
-        </div>
+      {% comment %}
+      <!--
+      以下は静的なプロジェクト項目です。投稿がない場合に備えて残しておくこともできます。
+
+      <div class="project-item">
+        <h3 class="project-title">東京高速道路・KK線調査</h3>
+        <p class="project-description">
+          銀座スカイウォークイベントを契機に、橋梁部や滞留空間（エシカルゾーン）における歩行者の行動特性を多角的手法で解析。イベント時の歩行者動態とSNS投稿の分析を通じ、公共空間のデザイン改善に寄与する示唆を得ました。
+        </p>
+      </div>
+
+      <div class="project-item">
+        <h3 class="project-title">城崎温泉調査</h3>
+        <p class="project-description">
+          温泉街における宿泊施設周辺のチェックイン・チェックアウト調査および温泉施設前の歩行者行動を記録。温泉街全体の魅力向上と安全性確保のための基礎データを蓄積しました。
+        </p>
+      </div>
+
+      <div class="project-item">
+        <h3 class="project-title">松山市花園町通り調査</h3>
+        <p class="project-description">
+          街路上休憩空間の利用実態を、可動ファニチャーの設置パタン（現状、机・イス、机・イス＋テント）および季節変動の観点から解析。歩行者の滞留行動をクラスター分析により分類し、空間マネジメントに向けた最適な設計手法を提案しました。
+        </p>
+      </div>
+
+      <div class="project-item">
+        <h3 class="project-title">柏駅前ハウディモール調査</h3>
+        <p class="project-description">
+          歩行者天国実施時と通常時の歩行利用状況、車道空間利用、及び歩行者属性を解析。実施時は総歩行者数が約1.2倍に増加し、車道上の利用が新たな歩行パターンとして浮かび上がりました。アンケート調査により、居住地やグループ人数が車道利用に影響することが示され、地域の歩行環境改善に向けた具体的な提案が可能となりました。
+        </p>
+      </div>
+      -->
+      {% endcomment %}
+    </section>
+
+    <section class="section future-section">
+      <header>
+        <h2 class="section-title">研究の意義と今後の展望</h2>
+      </header>
+      <p class="future-description">
+        これらのプロジェクトを通じ、都市空間の「見える化」と動的マネジメント戦略の両面から、歩行者行動の多角的な理解が進みました。先進技術を駆使したデータ収集と解析により、従来の定性的評価に加えて数値的エビデンスに基づく改善策を提案できるようになりました。今後は、これらの知見を都市全体の歩行環境改善に応用し、実際の街づくりへの政策提言や、他地域との比較研究を進めることで、より普遍的なマネジメント手法の確立を目指します。
+      </p>
+    </section>
+
+    <section class="section contact-section">
+      <header>
+        <h2 class="section-title">連絡先</h2>
+      </header>
+      <p class="contact-intro">研究に関するお問い合わせ、共同研究のご提案など、お気軽にご連絡ください。</p>
+      <ul class="contact-list">
+        <li class="contact-item">
+          <strong>所属:</strong>
+          {% if site.data.research_map.affiliations[0].affiliation.ja %}
+          {{ site.data.research_map.affiliations[0].affiliation.ja }}
+          {% elsif site.data.research_map.affiliations[0].affiliation.en %}
+          {{ site.data.research_map.affiliations[0].affiliation.en }}
+          {% endif %}
+        </li>
+        <li class="contact-item">
+          <strong>Email:</strong> <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+        </li>
+      </ul>
+      <div class="social-links">
+        {% if site.github_username %}<a href="https://github.com/{{ site.github_username }}" class="social-link">GitHub</a>{% endif %}
+        {% if site.twitter_username %}<a href="https://twitter.com/{{ site.twitter_username }}" class="social-link">Twitter</a>{% endif %}
+        <a href="https://researchmap.jp/{{ site.data.research_map.permalink }}" target="_blank" class="social-link">researchmap</a>
+        {% if site.data.research_map.identifiers.j_global_id[0] %}<a href="https://jglobal.jst.go.jp/detail?JGLOBAL_ID={{ site.data.research_map.identifiers.j_global_id[0] }}" target="_blank" class="social-link">J-GLOBAL</a>{% endif %}
       </div>
     </section>
 
-    <!-- 連絡先 -->
-    <section style="margin-top: 10%">
-      <h3>連絡先</h3>
-      <div class="row">
-        <div class="twelve columns">
-          <p>研究に関するお問い合わせ、共同研究のご提案など、お気軽にご連絡ください。</p>
-          <ul>
-            <li><strong>所属:</strong> ○○大学 △△研究科 □□研究室</li>
-            <li><strong>住所:</strong> 〒000-0000 ○○県△△市□□町1-2-3</li>
-            <li><strong>Email:</strong> <a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
-          </ul>
-          {% if site.github_username %}<a href="https://github.com/{{ site.github_username }}" style="margin-right: 20px;">GitHub</a>{% endif %}
-          {% if site.twitter_username %}<a href="https://twitter.com/{{ site.twitter_username }}" style="margin-right: 20px;">Twitter</a>{% endif %}
-          <a href="https://orcid.org/" target="_blank" style="margin-right: 20px;">ORCID</a>
-          <a href="https://scholar.google.com/" target="_blank" style="margin-right: 20px;">Google Scholar</a>
-          <a href="https://www.researchgate.net/" target="_blank">ResearchGate</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- フッター -->
-    <footer style="margin-top: 10%; margin-bottom: 5%; padding-top: 5%; border-top: 1px solid #eee;">
-      <p>&copy; {{ site.time | date: '%Y' }} {{ site.title }}. All rights reserved.</p>
+    <footer class="site-footer">
+      <p class="copyright">&copy; {{ site.time | date: '%Y' }} {{ site.title }}. All rights reserved.</p>
     </footer>
   </div>
 </body>
